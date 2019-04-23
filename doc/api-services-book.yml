@@ -12,5 +12,4 @@ books:
       destination: 3_1-HomeScreen-Guide.md
       name: Home Screen Developper Guide
     - name: LibHomeScreen
-      destination: api-ref/html/de/dd0/class_lib_home_screen.html
       url: api-ref/html/de/dd0/class_lib_home_screen.html

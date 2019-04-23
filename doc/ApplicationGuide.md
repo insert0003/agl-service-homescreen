@@ -203,7 +203,7 @@ On the other hand, regarding lower binder there is only one module in the system
 
 The communication protocols between libhomescreen and upper binder, upper binder and lower binder, lower binder (homescreen-binding) are WebSocket.
 
-![softwarestack.png](parts/software-stack.png)
+![softwarestack.png](parts/softwarestack.png)
 
 * * *
 

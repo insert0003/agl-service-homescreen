@@ -8,7 +8,7 @@ books:
     author: "TOYOTA MOTOR CORPORATION"
     version: master
     chapters:
-    - url: ./ApplicationGuide.md
+    - url: ApplicationGuide.md
       destination: 3_1-HomeScreen-Guide.md
       name: Home Screen Developper Guide
     - name: api-ref

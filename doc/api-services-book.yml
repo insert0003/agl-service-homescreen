@@ -13,5 +13,3 @@ books:
       name: Home Screen Developper Guide
     - name: api-ref
       url: api-ref
-    - name: parts
-      url: parts

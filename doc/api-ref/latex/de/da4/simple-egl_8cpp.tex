@@ -1,0 +1,1068 @@
+\hypertarget{simple-egl_8cpp}{}\section{libhomescreen/simple-\/egl.cpp File Reference}
+\label{simple-egl_8cpp}\index{libhomescreen/simple-\/egl.\+cpp@{libhomescreen/simple-\/egl.\+cpp}}
+{\ttfamily \#include $<$mutex$>$}\\*
+{\ttfamily \#include $<$chrono$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$stdarg.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$thread$>$}\\*
+{\ttfamily \#include $<$exception$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include $<$wayland-\/client.\+h$>$}\\*
+{\ttfamily \#include $<$wayland-\/egl.\+h$>$}\\*
+{\ttfamily \#include $<$G\+L\+E\+S2/gl2.\+h$>$}\\*
+{\ttfamily \#include $<$E\+G\+L/egl.\+h$>$}\\*
+{\ttfamily \#include $<$E\+G\+L/eglext.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$libwindowmanager.\+h$>$}\\*
+{\ttfamily \#include $<$libhomescreen.\+hpp$>$}\\*
+{\ttfamily \#include $<$ilm/ivi-\/application-\/client-\/protocol.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}hmi-\/debug.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}platform.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structdisplay}{display}
+\item 
+struct \hyperlink{structgeometry}{geometry}
+\item 
+struct \hyperlink{structwindow}{window}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{simple-egl_8cpp_a083d37f289b99270e0391419178d458f}{E\+G\+L\+\_\+\+E\+X\+T\+\_\+swap\+\_\+buffers\+\_\+with\+\_\+damage}~1
+\item 
+\#define \hyperlink{simple-egl_8cpp_a0792e3d8b2bc978f95917a234b0c81df}{E\+G\+L\+\_\+\+E\+X\+T\+\_\+buffer\+\_\+age}~1
+\item 
+\#define \hyperlink{simple-egl_8cpp_a7045d8a6b4857f268a62fab2de2021fd}{E\+G\+L\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+A\+G\+E\+\_\+\+E\+XT}~0x313D
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef E\+G\+L\+Surface \hyperlink{simple-egl_8cpp_a0720952aa1caded45b5bcdce589663a9}{surface}
+\item 
+typedef E\+G\+L\+Surface E\+G\+Lint $\ast$ \hyperlink{simple-egl_8cpp_a56616f7ca3fc53c0da41d05de9330b11}{rects}
+\item 
+typedef E\+G\+L\+Surface E\+G\+Lint E\+G\+Lint \hyperlink{simple-egl_8cpp_aa6a11810244355f89e6c4961b9dd3b53}{n\+\_\+rects}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{simple-egl_8cpp_ab4ad070d3bf82abe5e70330578f67893}{E\+G\+L\+Boolean} (E\+G\+L\+A\+P\+I\+E\+N\+T\+R\+YP P\+F\+N\+E\+G\+L\+S\+W\+A\+P\+B\+U\+F\+F\+E\+R\+S\+W\+I\+T\+H\+D\+A\+M\+A\+G\+E\+E\+X\+T\+P\+R\+OC)(E\+G\+L\+Display dpy
+\item 
+static void \hyperlink{simple-egl_8cpp_a1073d4aca1838d3877fe577d813700fc}{init\+\_\+egl} (struct \hyperlink{structdisplay}{display} $\ast$\hyperlink{structdisplay}{display}, struct \hyperlink{structwindow}{window} $\ast$\hyperlink{structwindow}{window})
+\item 
+static void \hyperlink{simple-egl_8cpp_a4f71f46ede5b73bd7c770c973826f771}{fini\+\_\+egl} (struct \hyperlink{structdisplay}{display} $\ast$\hyperlink{structdisplay}{display})
+\item 
+static G\+Luint \hyperlink{simple-egl_8cpp_ab72c580e4d6d47c2fb49c72cc76b85bb}{create\+\_\+shader} (struct \hyperlink{structwindow}{window} $\ast$\hyperlink{structwindow}{window}, const char $\ast$source, G\+Lenum shader\+\_\+type)
+\item 
+static void \hyperlink{simple-egl_8cpp_ab3ee863fa45f4026f78f592d6f6e34ff}{init\+\_\+gl} (struct \hyperlink{structwindow}{window} $\ast$\hyperlink{structwindow}{window})
+\item 
+static void \hyperlink{simple-egl_8cpp_a0122201fe28a7f35b0fbd362fff7094e}{create\+\_\+ivi\+\_\+surface} (struct \hyperlink{structwindow}{window} $\ast$\hyperlink{structwindow}{window}, struct \hyperlink{structdisplay}{display} $\ast$\hyperlink{structdisplay}{display})
+\item 
+static void \hyperlink{simple-egl_8cpp_a83c7f2e34bbc715d97f0642def708293}{create\+\_\+surface} (struct \hyperlink{structwindow}{window} $\ast$\hyperlink{structwindow}{window})
+\item 
+static void \hyperlink{simple-egl_8cpp_aba2ea9aa51701e52d4f36b4f34cecf7a}{destroy\+\_\+surface} (struct \hyperlink{structwindow}{window} $\ast$\hyperlink{structwindow}{window})
+\item 
+static void \hyperlink{simple-egl_8cpp_a927502f6103ec35422eead39e62ab7ba}{redraw} (void $\ast$data, struct wl\+\_\+callback $\ast$callback, uint32\+\_\+t time)
+\item 
+static void \hyperlink{simple-egl_8cpp_af288e02a94c196a68b327fc55c049932}{registry\+\_\+handle\+\_\+global} (void $\ast$data, struct wl\+\_\+registry $\ast$registry, uint32\+\_\+t name, const char $\ast$interface, uint32\+\_\+t version)
+\item 
+static void \hyperlink{simple-egl_8cpp_a59a731b9efa9d6a2015cdc8ccae1db80}{registry\+\_\+handle\+\_\+global\+\_\+remove} (void $\ast$data, struct wl\+\_\+registry $\ast$registry, uint32\+\_\+t name)
+\item 
+static void \hyperlink{simple-egl_8cpp_a2cfc8c2d3fc1273ba8f811d2e639aec8}{signal\+\_\+int} (int signum)
+\item 
+int \hyperlink{simple-egl_8cpp_a644e25276ecdea04f2aa3412c1973927}{init\+\_\+wm} (Lib\+Windowmanager $\ast$\hyperlink{simple-egl_8cpp_ad1513698e07197206c290f94d7669d85}{wm}, struct \hyperlink{structwindow}{window} $\ast$\hyperlink{structwindow}{window})
+\item 
+int \hyperlink{simple-egl_8cpp_a79aafeb99915566dd3970246f465f306}{init\+\_\+hs} (\hyperlink{class_lib_home_screen}{Lib\+Home\+Screen} $\ast$\hyperlink{simple-egl_8cpp_a529acbd1fed9d98a587edfa62309fa8d}{hs})
+\item 
+int \hyperlink{simple-egl_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\+\_\+prefix} = \char`\"{}simple-\/egl\char`\"{}
+\item 
+uint32\+\_\+t \hyperlink{simple-egl_8cpp_a28f56c9f01ed9f108201950645317cc9}{g\+\_\+id\+\_\+ivisurf} = 9009
+\item 
+long \hyperlink{simple-egl_8cpp_a300b6806fe6818927fe4df08f2398124}{port} = 1700
+\item 
+string \hyperlink{simple-egl_8cpp_a623ef6987ef3bd185c07b28b13e46d34}{token} = string(\char`\"{}wm\char`\"{})
+\item 
+string \hyperlink{simple-egl_8cpp_a0da928eccfc57d1dfadfd29d4ac4854c}{app\+\_\+name} = string(\char`\"{}Navigation\char`\"{})
+\item 
+const char $\ast$ \hyperlink{simple-egl_8cpp_a332251aa739a56836cd4fbf3ecbb8bb2}{main\+\_\+role} = \char`\"{}navigation\char`\"{}
+\item 
+\hyperlink{class_lib_home_screen}{Lib\+Home\+Screen} $\ast$ \hyperlink{simple-egl_8cpp_a529acbd1fed9d98a587edfa62309fa8d}{hs}
+\item 
+Lib\+Windowmanager $\ast$ \hyperlink{simple-egl_8cpp_ad1513698e07197206c290f94d7669d85}{wm}
+\item 
+static const struct wl\+\_\+interface $\ast$ \hyperlink{simple-egl_8cpp_aea3203db9e218d3e5d60bdb4ebe2fa1f}{types} \mbox{[}$\,$\mbox{]}
+\item 
+static const struct wl\+\_\+message \hyperlink{simple-egl_8cpp_ada80120c5590d2821da9babef808b98d}{ivi\+\_\+surface\+\_\+requests} \mbox{[}$\,$\mbox{]}
+\item 
+static const struct wl\+\_\+message \hyperlink{simple-egl_8cpp_ac848f4fbf712a9ba414272fa85577791}{ivi\+\_\+surface\+\_\+events} \mbox{[}$\,$\mbox{]}
+\item 
+const struct wl\+\_\+interface \hyperlink{simple-egl_8cpp_adf384de8d12d2edd7265ab85fd16b11c}{ivi\+\_\+surface\+\_\+interface}
+\item 
+static const struct wl\+\_\+message \hyperlink{simple-egl_8cpp_a21a39b7c6cf5f6d10a62a70b3ebc9bad}{ivi\+\_\+application\+\_\+requests} \mbox{[}$\,$\mbox{]}
+\item 
+const struct wl\+\_\+interface \hyperlink{simple-egl_8cpp_a769b65b7b0e834f732f1f45e835890d5}{ivi\+\_\+application\+\_\+interface}
+\item 
+static const char $\ast$ \hyperlink{simple-egl_8cpp_a717575939a37d84dcd4cf0447a630834}{vert\+\_\+shader\+\_\+text}
+\item 
+static const char $\ast$ \hyperlink{simple-egl_8cpp_ab5a6a2a26ac23f79b1687daa4b0d8980}{frag\+\_\+shader\+\_\+text}
+\item 
+static int \hyperlink{simple-egl_8cpp_a2f45113638a0b749a8a205d2cd7fb42b}{running} = 1
+\item 
+static const struct wl\+\_\+registry\+\_\+listener \hyperlink{simple-egl_8cpp_a8998c87c94cd7d185e8f0cdafab4b1c4}{registry\+\_\+listener}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!E\+G\+L\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+A\+G\+E\+\_\+\+E\+XT@{E\+G\+L\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+A\+G\+E\+\_\+\+E\+XT}}
+\index{E\+G\+L\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+A\+G\+E\+\_\+\+E\+XT@{E\+G\+L\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+A\+G\+E\+\_\+\+E\+XT}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{E\+G\+L\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+A\+G\+E\+\_\+\+E\+XT}{EGL_BUFFER_AGE_EXT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+G\+L\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+A\+G\+E\+\_\+\+E\+XT~0x313D}\hypertarget{simple-egl_8cpp_a7045d8a6b4857f268a62fab2de2021fd}{}\label{simple-egl_8cpp_a7045d8a6b4857f268a62fab2de2021fd}
+
+
+Definition at line 110 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!E\+G\+L\+\_\+\+E\+X\+T\+\_\+buffer\+\_\+age@{E\+G\+L\+\_\+\+E\+X\+T\+\_\+buffer\+\_\+age}}
+\index{E\+G\+L\+\_\+\+E\+X\+T\+\_\+buffer\+\_\+age@{E\+G\+L\+\_\+\+E\+X\+T\+\_\+buffer\+\_\+age}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{E\+G\+L\+\_\+\+E\+X\+T\+\_\+buffer\+\_\+age}{EGL_EXT_buffer_age}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+G\+L\+\_\+\+E\+X\+T\+\_\+buffer\+\_\+age~1}\hypertarget{simple-egl_8cpp_a0792e3d8b2bc978f95917a234b0c81df}{}\label{simple-egl_8cpp_a0792e3d8b2bc978f95917a234b0c81df}
+
+
+Definition at line 109 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!E\+G\+L\+\_\+\+E\+X\+T\+\_\+swap\+\_\+buffers\+\_\+with\+\_\+damage@{E\+G\+L\+\_\+\+E\+X\+T\+\_\+swap\+\_\+buffers\+\_\+with\+\_\+damage}}
+\index{E\+G\+L\+\_\+\+E\+X\+T\+\_\+swap\+\_\+buffers\+\_\+with\+\_\+damage@{E\+G\+L\+\_\+\+E\+X\+T\+\_\+swap\+\_\+buffers\+\_\+with\+\_\+damage}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{E\+G\+L\+\_\+\+E\+X\+T\+\_\+swap\+\_\+buffers\+\_\+with\+\_\+damage}{EGL_EXT_swap_buffers_with_damage}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+G\+L\+\_\+\+E\+X\+T\+\_\+swap\+\_\+buffers\+\_\+with\+\_\+damage~1}\hypertarget{simple-egl_8cpp_a083d37f289b99270e0391419178d458f}{}\label{simple-egl_8cpp_a083d37f289b99270e0391419178d458f}
+
+
+Definition at line 104 of file simple-\/egl.\+cpp.
+
+
+
+\subsection{Typedef Documentation}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!n\+\_\+rects@{n\+\_\+rects}}
+\index{n\+\_\+rects@{n\+\_\+rects}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{n\+\_\+rects}{n_rects}}]{\setlength{\rightskip}{0pt plus 5cm}typedef E\+G\+L\+Surface E\+G\+Lint E\+G\+Lint {\bf n\+\_\+rects}}\hypertarget{simple-egl_8cpp_aa6a11810244355f89e6c4961b9dd3b53}{}\label{simple-egl_8cpp_aa6a11810244355f89e6c4961b9dd3b53}
+
+
+Definition at line 105 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!rects@{rects}}
+\index{rects@{rects}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{rects}{rects}}]{\setlength{\rightskip}{0pt plus 5cm}typedef E\+G\+L\+Surface E\+G\+Lint$\ast$ {\bf rects}}\hypertarget{simple-egl_8cpp_a56616f7ca3fc53c0da41d05de9330b11}{}\label{simple-egl_8cpp_a56616f7ca3fc53c0da41d05de9330b11}
+
+
+Definition at line 105 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!surface@{surface}}
+\index{surface@{surface}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{surface}{surface}}]{\setlength{\rightskip}{0pt plus 5cm}typedef E\+G\+L\+Surface {\bf surface}}\hypertarget{simple-egl_8cpp_a0720952aa1caded45b5bcdce589663a9}{}\label{simple-egl_8cpp_a0720952aa1caded45b5bcdce589663a9}
+
+
+Definition at line 105 of file simple-\/egl.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!create\+\_\+ivi\+\_\+surface@{create\+\_\+ivi\+\_\+surface}}
+\index{create\+\_\+ivi\+\_\+surface@{create\+\_\+ivi\+\_\+surface}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{create\+\_\+ivi\+\_\+surface(struct window $\ast$window, struct display $\ast$display)}{create_ivi_surface(struct window *window, struct display *display)}}]{\setlength{\rightskip}{0pt plus 5cm}static void create\+\_\+ivi\+\_\+surface (
+\begin{DoxyParamCaption}
+\item[{struct {\bf window} $\ast$}]{window, }
+\item[{struct {\bf display} $\ast$}]{display}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_a0122201fe28a7f35b0fbd362fff7094e}{}\label{simple-egl_8cpp_a0122201fe28a7f35b0fbd362fff7094e}
+
+
+Definition at line 322 of file simple-\/egl.\+cpp.
+
+
+\begin{DoxyCode}
+323 \{
+324     uint32\_t id\_ivisurf = \hyperlink{simple-egl_8cpp_a28f56c9f01ed9f108201950645317cc9}{g\_id\_ivisurf};
+325     window->\hyperlink{structwindow_a40e2c6fb4178953c820fc1b9f41d4b31}{ivi\_surface} =
+326         ivi\_application\_surface\_create(display->\hyperlink{structdisplay_a24c073faff3bb4799c2d46291f27ab89}{ivi\_application},
+327                            id\_ivisurf, window->\hyperlink{structwindow_a7d0790cfc7c30621611fa26ab5c1ae97}{surface});
+328 
+329     \textcolor{keywordflow}{if} (window->\hyperlink{structwindow_a40e2c6fb4178953c820fc1b9f41d4b31}{ivi\_surface} == NULL) \{
+330         \hyperlink{include_2hmi-debug_8h_a65bb6c7cfe38f8a724beab5059d36fb2}{HMI\_ERROR}(\hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\_prefix},\textcolor{stringliteral}{"Failed to create ivi\_client\_surface"});
+331         abort();
+332     \}
+333 
+334 \}
+\end{DoxyCode}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!create\+\_\+shader@{create\+\_\+shader}}
+\index{create\+\_\+shader@{create\+\_\+shader}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{create\+\_\+shader(struct window $\ast$window, const char $\ast$source, G\+Lenum shader\+\_\+type)}{create_shader(struct window *window, const char *source, GLenum shader_type)}}]{\setlength{\rightskip}{0pt plus 5cm}static G\+Luint create\+\_\+shader (
+\begin{DoxyParamCaption}
+\item[{struct {\bf window} $\ast$}]{window, }
+\item[{const char $\ast$}]{source, }
+\item[{G\+Lenum}]{shader\+\_\+type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_ab72c580e4d6d47c2fb49c72cc76b85bb}{}\label{simple-egl_8cpp_ab72c580e4d6d47c2fb49c72cc76b85bb}
+
+
+Definition at line 259 of file simple-\/egl.\+cpp.
+
+
+\begin{DoxyCode}
+260 \{
+261     GLuint shader;
+262     GLint status;
+263 
+264     shader = glCreateShader(shader\_type);
+265     assert(shader != 0);
+266 
+267     glShaderSource(shader, 1, (\textcolor{keyword}{const} \textcolor{keywordtype}{char} **) &source, NULL);
+268     glCompileShader(shader);
+269 
+270     glGetShaderiv(shader, GL\_COMPILE\_STATUS, &status);
+271     \textcolor{keywordflow}{if} (!status) \{
+272         \textcolor{keywordtype}{char} log[1000];
+273         GLsizei len;
+274         glGetShaderInfoLog(shader, 1000, &len, log);
+275         \hyperlink{include_2hmi-debug_8h_a65bb6c7cfe38f8a724beab5059d36fb2}{HMI\_ERROR}(\hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\_prefix},\textcolor{stringliteral}{"Error: compiling %s: %*s"},
+276             shader\_type == GL\_VERTEX\_SHADER ? \textcolor{stringliteral}{"vertex"} : \textcolor{stringliteral}{"fragment"},
+277             len, log);
+278         exit(1);
+279     \}
+280 
+281     \textcolor{keywordflow}{return} shader;
+282 \}
+\end{DoxyCode}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!create\+\_\+surface@{create\+\_\+surface}}
+\index{create\+\_\+surface@{create\+\_\+surface}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{create\+\_\+surface(struct window $\ast$window)}{create_surface(struct window *window)}}]{\setlength{\rightskip}{0pt plus 5cm}static void create\+\_\+surface (
+\begin{DoxyParamCaption}
+\item[{struct {\bf window} $\ast$}]{window}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_a83c7f2e34bbc715d97f0642def708293}{}\label{simple-egl_8cpp_a83c7f2e34bbc715d97f0642def708293}
+
+
+Definition at line 337 of file simple-\/egl.\+cpp.
+
+
+\begin{DoxyCode}
+338 \{
+339     \textcolor{keyword}{struct }\hyperlink{structdisplay}{display} *\hyperlink{structdisplay}{display} = window->\hyperlink{structwindow_a129486f2bd23791194f389ca1405cfd4}{display};
+340     \hyperlink{simple-egl_8cpp_ab4ad070d3bf82abe5e70330578f67893}{EGLBoolean} ret;
+341 
+342     window->\hyperlink{structwindow_a7d0790cfc7c30621611fa26ab5c1ae97}{surface} = wl\_compositor\_create\_surface(display->\hyperlink{structdisplay_a41ba32dfde812165dda5b62885000c78}{compositor});
+343 
+344     window->\hyperlink{structwindow_ae41be0955d0e73530e1bc13dfeb9d731}{native} =
+345         wl\_egl\_window\_create(window->\hyperlink{structwindow_a7d0790cfc7c30621611fa26ab5c1ae97}{surface},
+346                      window->geometry.width,
+347                      window->geometry.height);
+348     window->\hyperlink{structwindow_a8de0059f3f1cb0dec33fba1143b7dee1}{egl\_surface} =
+349         weston\_platform\_create\_egl\_surface(display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy},
+350                            display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a880aef9408b499f5b749541dc6e396c3}{conf},
+351                            window->\hyperlink{structwindow_ae41be0955d0e73530e1bc13dfeb9d731}{native}, NULL);
+352 
+353 
+354     \textcolor{keywordflow}{if} (display->\hyperlink{structdisplay_a24c073faff3bb4799c2d46291f27ab89}{ivi\_application} ) \{
+355         \hyperlink{simple-egl_8cpp_a0122201fe28a7f35b0fbd362fff7094e}{create\_ivi\_surface}(window, display);
+356     \} \textcolor{keywordflow}{else} \{
+357         assert(0);
+358     \}
+359 
+360     ret = eglMakeCurrent(window->\hyperlink{structwindow_a129486f2bd23791194f389ca1405cfd4}{display}->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy}, window->
+      \hyperlink{structwindow_a8de0059f3f1cb0dec33fba1143b7dee1}{egl\_surface},
+361                  window->\hyperlink{structwindow_a8de0059f3f1cb0dec33fba1143b7dee1}{egl\_surface}, window->\hyperlink{structwindow_a129486f2bd23791194f389ca1405cfd4}{display}->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.
+      \hyperlink{structdisplay_a3420940a29a710e0e5ebd41ba462cc00}{ctx});
+362     assert(ret == EGL\_TRUE);
+363 
+364     \textcolor{keywordflow}{if} (!window->\hyperlink{structwindow_a851bcb65083f5ab5ff768b09522bed70}{frame\_sync})
+365         eglSwapInterval(display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy}, 0);
+366 
+367 \}
+\end{DoxyCode}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!destroy\+\_\+surface@{destroy\+\_\+surface}}
+\index{destroy\+\_\+surface@{destroy\+\_\+surface}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{destroy\+\_\+surface(struct window $\ast$window)}{destroy_surface(struct window *window)}}]{\setlength{\rightskip}{0pt plus 5cm}static void destroy\+\_\+surface (
+\begin{DoxyParamCaption}
+\item[{struct {\bf window} $\ast$}]{window}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_aba2ea9aa51701e52d4f36b4f34cecf7a}{}\label{simple-egl_8cpp_aba2ea9aa51701e52d4f36b4f34cecf7a}
+
+
+Definition at line 370 of file simple-\/egl.\+cpp.
+
+
+\begin{DoxyCode}
+371 \{
+372     \textcolor{comment}{/* Required, otherwise segfault in egl\_dri2.c: dri2\_make\_current()}
+373 \textcolor{comment}{     * on eglReleaseThread(). */}
+374     eglMakeCurrent(window->\hyperlink{structwindow_a129486f2bd23791194f389ca1405cfd4}{display}->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy}, EGL\_NO\_SURFACE, EGL\_NO\_SURFACE,
+375                EGL\_NO\_CONTEXT);
+376 
+377     eglDestroySurface(window->\hyperlink{structwindow_a129486f2bd23791194f389ca1405cfd4}{display}->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy}, window->\hyperlink{structwindow_a8de0059f3f1cb0dec33fba1143b7dee1}{egl\_surface});
+378     wl\_egl\_window\_destroy(window->\hyperlink{structwindow_ae41be0955d0e73530e1bc13dfeb9d731}{native});
+379 
+380     \textcolor{keywordflow}{if} (window->\hyperlink{structwindow_a129486f2bd23791194f389ca1405cfd4}{display}->\hyperlink{structdisplay_a24c073faff3bb4799c2d46291f27ab89}{ivi\_application})
+381         ivi\_surface\_destroy(window->\hyperlink{structwindow_a40e2c6fb4178953c820fc1b9f41d4b31}{ivi\_surface});
+382     wl\_surface\_destroy(window->\hyperlink{structwindow_a7d0790cfc7c30621611fa26ab5c1ae97}{surface});
+383 
+384     \textcolor{keywordflow}{if} (window->\hyperlink{structwindow_a35ba639556fa19d9273dad0953a6807e}{callback})
+385         wl\_callback\_destroy(window->\hyperlink{structwindow_a35ba639556fa19d9273dad0953a6807e}{callback});
+386 \}
+\end{DoxyCode}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!E\+G\+L\+Boolean@{E\+G\+L\+Boolean}}
+\index{E\+G\+L\+Boolean@{E\+G\+L\+Boolean}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{E\+G\+L\+Boolean(\+E\+G\+L\+A\+P\+I\+E\+N\+T\+R\+Y\+P P\+F\+N\+E\+G\+L\+S\+W\+A\+P\+B\+U\+F\+F\+E\+R\+S\+W\+I\+T\+H\+D\+A\+M\+A\+G\+E\+E\+X\+T\+P\+R\+O\+C)(\+E\+G\+L\+Display dpy}{EGLBoolean(EGLAPIENTRYP PFNEGLSWAPBUFFERSWITHDAMAGEEXTPROC)(EGLDisplay dpy}}]{\setlength{\rightskip}{0pt plus 5cm}typedef E\+G\+L\+Boolean (
+\begin{DoxyParamCaption}
+\item[{E\+G\+L\+A\+P\+I\+E\+N\+T\+R\+YP}]{P\+F\+N\+E\+G\+L\+S\+W\+A\+P\+B\+U\+F\+F\+E\+R\+S\+W\+I\+T\+H\+D\+A\+M\+A\+G\+E\+E\+X\+T\+P\+R\+OC}
+\end{DoxyParamCaption}
+)}\hypertarget{simple-egl_8cpp_ab4ad070d3bf82abe5e70330578f67893}{}\label{simple-egl_8cpp_ab4ad070d3bf82abe5e70330578f67893}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!fini\+\_\+egl@{fini\+\_\+egl}}
+\index{fini\+\_\+egl@{fini\+\_\+egl}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{fini\+\_\+egl(struct display $\ast$display)}{fini_egl(struct display *display)}}]{\setlength{\rightskip}{0pt plus 5cm}static void fini\+\_\+egl (
+\begin{DoxyParamCaption}
+\item[{struct {\bf display} $\ast$}]{display}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_a4f71f46ede5b73bd7c770c973826f771}{}\label{simple-egl_8cpp_a4f71f46ede5b73bd7c770c973826f771}
+
+
+Definition at line 252 of file simple-\/egl.\+cpp.
+
+
+\begin{DoxyCode}
+253 \{
+254     eglTerminate(display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy});
+255     eglReleaseThread();
+256 \}
+\end{DoxyCode}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!init\+\_\+egl@{init\+\_\+egl}}
+\index{init\+\_\+egl@{init\+\_\+egl}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{init\+\_\+egl(struct display $\ast$display, struct window $\ast$window)}{init_egl(struct display *display, struct window *window)}}]{\setlength{\rightskip}{0pt plus 5cm}static void init\+\_\+egl (
+\begin{DoxyParamCaption}
+\item[{struct {\bf display} $\ast$}]{display, }
+\item[{struct {\bf window} $\ast$}]{window}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_a1073d4aca1838d3877fe577d813700fc}{}\label{simple-egl_8cpp_a1073d4aca1838d3877fe577d813700fc}
+
+
+Definition at line 174 of file simple-\/egl.\+cpp.
+
+
+\begin{DoxyCode}
+175 \{
+176     \textcolor{keyword}{static} \textcolor{keyword}{const} EGLint context\_attribs[] = \{
+177         EGL\_CONTEXT\_CLIENT\_VERSION, 2,
+178         EGL\_NONE
+179     \};
+180     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *extensions;
+181 
+182     EGLint config\_attribs[] = \{
+183         EGL\_SURFACE\_TYPE, EGL\_WINDOW\_BIT,
+184         EGL\_RED\_SIZE, 1,
+185         EGL\_GREEN\_SIZE, 1,
+186         EGL\_BLUE\_SIZE, 1,
+187         EGL\_ALPHA\_SIZE, 1,
+188         EGL\_RENDERABLE\_TYPE, EGL\_OPENGL\_ES2\_BIT,
+189         EGL\_NONE
+190     \};
+191 
+192     EGLint major, minor, n, count, i, size;
+193     EGLConfig *configs;
+194     \hyperlink{simple-egl_8cpp_ab4ad070d3bf82abe5e70330578f67893}{EGLBoolean} ret;
+195 
+196     \textcolor{keywordflow}{if} (window->\hyperlink{structwindow_a026a50808d8323a5a73d585c19916fa8}{opaque} || window->\hyperlink{structwindow_a0e634038f669aff472012f25ea250b40}{buffer\_size} == 16)
+197         config\_attribs[9] = 0;
+198 
+199     display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy} = weston\_platform\_get\_egl\_display(EGL\_PLATFORM\_WAYLAND\_KHR, display->
+      \hyperlink{structdisplay_aa8faf09631925e9221fd8a0c086ce75a}{display}, NULL);
+200     assert(display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy});
+201 
+202     ret = eglInitialize(display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy}, &major, &minor);
+203     assert(ret == EGL\_TRUE);
+204     ret = eglBindAPI(EGL\_OPENGL\_ES\_API);
+205     assert(ret == EGL\_TRUE);
+206 
+207     \textcolor{keywordflow}{if} (!eglGetConfigs(display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy}, NULL, 0, &count) || count < 1)
+208         assert(0);
+209 
+210     configs = calloc(count, \textcolor{keyword}{sizeof} *configs);
+211     assert(configs);
+212 
+213     ret = eglChooseConfig(display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy}, config\_attribs,
+214                   configs, count, &n);
+215     assert(ret && n >= 1);
+216 
+217     \textcolor{keywordflow}{for} (i = 0; i < n; i++) \{
+218         eglGetConfigAttrib(display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy},
+219                    configs[i], EGL\_BUFFER\_SIZE, &size);
+220         \textcolor{keywordflow}{if} (window->\hyperlink{structwindow_a0e634038f669aff472012f25ea250b40}{buffer\_size} == size) \{
+221             display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a880aef9408b499f5b749541dc6e396c3}{conf} = configs[i];
+222             \textcolor{keywordflow}{break};
+223         \}
+224     \}
+225     free(configs);
+226     \textcolor{keywordflow}{if} (display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a880aef9408b499f5b749541dc6e396c3}{conf} == NULL) \{
+227         \hyperlink{include_2hmi-debug_8h_a65bb6c7cfe38f8a724beab5059d36fb2}{HMI\_ERROR}(\hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\_prefix},\textcolor{stringliteral}{"did not find config with buffer size %d"},
+228             window->\hyperlink{structwindow_a0e634038f669aff472012f25ea250b40}{buffer\_size});
+229         exit(EXIT\_FAILURE);
+230     \}
+231 
+232     display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a3420940a29a710e0e5ebd41ba462cc00}{ctx} = eglCreateContext(display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy},
+233                         display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a880aef9408b499f5b749541dc6e396c3}{conf},
+234                         EGL\_NO\_CONTEXT, context\_attribs);
+235     assert(display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a3420940a29a710e0e5ebd41ba462cc00}{ctx});
+236 
+237     display->\hyperlink{structdisplay_a48c46c118e4765ef06596f6341c8f23f}{swap\_buffers\_with\_damage} = NULL;
+238     extensions = eglQueryString(display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy}, EGL\_EXTENSIONS);
+239     \textcolor{keywordflow}{if} (extensions &&
+240         strstr(extensions, \textcolor{stringliteral}{"EGL\_EXT\_swap\_buffers\_with\_damage"}) &&
+241         strstr(extensions, \textcolor{stringliteral}{"EGL\_EXT\_buffer\_age"}))
+242         display->\hyperlink{structdisplay_a48c46c118e4765ef06596f6341c8f23f}{swap\_buffers\_with\_damage} =
+243             (PFNEGLSWAPBUFFERSWITHDAMAGEEXTPROC)
+244             eglGetProcAddress(\textcolor{stringliteral}{"eglSwapBuffersWithDamageEXT"});
+245 
+246     \textcolor{keywordflow}{if} (display->\hyperlink{structdisplay_a48c46c118e4765ef06596f6341c8f23f}{swap\_buffers\_with\_damage})
+247         \hyperlink{include_2hmi-debug_8h_a0d26d8b8201011dade787236519711c0}{HMI\_DEBUG}(\hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\_prefix},\textcolor{stringliteral}{"has EGL\_EXT\_buffer\_age and
+       EGL\_EXT\_swap\_buffers\_with\_damage"});
+248 
+249 \}
+\end{DoxyCode}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!init\+\_\+gl@{init\+\_\+gl}}
+\index{init\+\_\+gl@{init\+\_\+gl}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{init\+\_\+gl(struct window $\ast$window)}{init_gl(struct window *window)}}]{\setlength{\rightskip}{0pt plus 5cm}static void init\+\_\+gl (
+\begin{DoxyParamCaption}
+\item[{struct {\bf window} $\ast$}]{window}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_ab3ee863fa45f4026f78f592d6f6e34ff}{}\label{simple-egl_8cpp_ab3ee863fa45f4026f78f592d6f6e34ff}
+
+
+Definition at line 285 of file simple-\/egl.\+cpp.
+
+
+\begin{DoxyCode}
+286 \{
+287     GLuint frag, vert;
+288     GLuint program;
+289     GLint status;
+290 
+291     frag = \hyperlink{simple-egl_8cpp_ab72c580e4d6d47c2fb49c72cc76b85bb}{create\_shader}(window, \hyperlink{simple-egl_8cpp_ab5a6a2a26ac23f79b1687daa4b0d8980}{frag\_shader\_text}, GL\_FRAGMENT\_SHADER);
+292     vert = \hyperlink{simple-egl_8cpp_ab72c580e4d6d47c2fb49c72cc76b85bb}{create\_shader}(window, \hyperlink{simple-egl_8cpp_a717575939a37d84dcd4cf0447a630834}{vert\_shader\_text}, GL\_VERTEX\_SHADER);
+293 
+294     program = glCreateProgram();
+295     glAttachShader(program, frag);
+296     glAttachShader(program, vert);
+297     glLinkProgram(program);
+298 
+299     glGetProgramiv(program, GL\_LINK\_STATUS, &status);
+300     \textcolor{keywordflow}{if} (!status) \{
+301         \textcolor{keywordtype}{char} log[1000];
+302         GLsizei len;
+303         glGetProgramInfoLog(program, 1000, &len, log);
+304         \hyperlink{include_2hmi-debug_8h_a65bb6c7cfe38f8a724beab5059d36fb2}{HMI\_ERROR}(\hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\_prefix},\textcolor{stringliteral}{"Error: linking:%*s"}, len, log);
+305         exit(1);
+306     \}
+307 
+308     glUseProgram(program);
+309 
+310     window->\hyperlink{structwindow_a6975a930e9a3c166f8201fc4ef5e7728}{gl}.\hyperlink{structwindow_aaf965f90f9fc938db2315ff62028c362}{pos} = 0;
+311     window->\hyperlink{structwindow_a6975a930e9a3c166f8201fc4ef5e7728}{gl}.\hyperlink{structwindow_aef10fe94766ccd4831ee611c5ad0e55c}{col} = 1;
+312 
+313     glBindAttribLocation(program, window->\hyperlink{structwindow_a6975a930e9a3c166f8201fc4ef5e7728}{gl}.\hyperlink{structwindow_aaf965f90f9fc938db2315ff62028c362}{pos}, \textcolor{stringliteral}{"pos"});
+314     glBindAttribLocation(program, window->\hyperlink{structwindow_a6975a930e9a3c166f8201fc4ef5e7728}{gl}.\hyperlink{structwindow_aef10fe94766ccd4831ee611c5ad0e55c}{col}, \textcolor{stringliteral}{"color"});
+315     glLinkProgram(program);
+316 
+317     window->\hyperlink{structwindow_a6975a930e9a3c166f8201fc4ef5e7728}{gl}.\hyperlink{structwindow_a5202f3b60e262a6fa4fcee68dd47cb67}{rotation\_uniform} =
+318         glGetUniformLocation(program, \textcolor{stringliteral}{"rotation"});
+319 \}
+\end{DoxyCode}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!init\+\_\+hs@{init\+\_\+hs}}
+\index{init\+\_\+hs@{init\+\_\+hs}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{init\+\_\+hs(\+Lib\+Home\+Screen $\ast$hs)}{init_hs(LibHomeScreen *hs)}}]{\setlength{\rightskip}{0pt plus 5cm}int init\+\_\+hs (
+\begin{DoxyParamCaption}
+\item[{{\bf Lib\+Home\+Screen} $\ast$}]{hs}
+\end{DoxyParamCaption}
+)}\hypertarget{simple-egl_8cpp_a79aafeb99915566dd3970246f465f306}{}\label{simple-egl_8cpp_a79aafeb99915566dd3970246f465f306}
+
+
+Definition at line 565 of file simple-\/egl.\+cpp.
+
+
+\begin{DoxyCode}
+565                           \{
+566     \textcolor{keywordflow}{if}(hs->\hyperlink{class_lib_home_screen_a6a57b573cc767725762ba9beab032220}{init}(\hyperlink{simple-egl_8cpp_a300b6806fe6818927fe4df08f2398124}{port}, \hyperlink{simple-egl_8cpp_a623ef6987ef3bd185c07b28b13e46d34}{token})!=0)
+567     \{
+568         \hyperlink{include_2hmi-debug_8h_a65bb6c7cfe38f8a724beab5059d36fb2}{HMI\_ERROR}(\hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\_prefix},\textcolor{stringliteral}{"homescreen init failed. "});
+569         \textcolor{keywordflow}{return} -1;
+570     \}
+571 
+572     hs->\hyperlink{class_lib_home_screen_ab1b0e08bf35415de9064afed899e9f85}{set\_event\_handler}(\hyperlink{class_lib_home_screen_a82616c91ac211d2ad08e709b524bf154a3fb3563c64786f1a2ae404df6edffd5c}{LibHomeScreen::Event\_ShowWindow}, 
+      [hs](json\_object *\textcolor{keywordtype}{object})\{
+573         \hyperlink{include_2hmi-debug_8h_a0d26d8b8201011dade787236519711c0}{HMI\_DEBUG}(\textcolor{stringliteral}{"simple-egl"},\textcolor{stringliteral}{"try to activeWindow %s "}, \hyperlink{simple-egl_8cpp_a0da928eccfc57d1dfadfd29d4ac4854c}{app\_name}.c\_str());
+574 
+575         \textcolor{keyword}{struct }json\_object *param\_obj = json\_object\_object\_get(\textcolor{keywordtype}{object}, hs->
+      \hyperlink{class_lib_home_screen_a927592eff8e34efbbceaf12522f8897f}{\_keyParameter});
+576         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *area = json\_object\_get\_string(
+577             json\_object\_object\_get(param\_obj, hs->\hyperlink{class_lib_home_screen_a8becda1b035ae45f5a11c7e7963091bf}{\_keyArea}));
+578         \textcolor{comment}{// Application should call LibWindowmanager::activateWindow() in showWindow handler}
+579         \textcolor{keywordflow}{if}(area == \textcolor{keyword}{nullptr})
+580             \hyperlink{simple-egl_8cpp_ad1513698e07197206c290f94d7669d85}{wm}->activateWindow(\hyperlink{simple-egl_8cpp_a332251aa739a56836cd4fbf3ecbb8bb2}{main\_role}, hs->\hyperlink{class_lib_home_screen_aac718b60b83c74e2b061f6f7f7ec3bf5}{\_areaNormal});
+581         \textcolor{keywordflow}{else}
+582             \hyperlink{simple-egl_8cpp_ad1513698e07197206c290f94d7669d85}{wm}->activateWindow(\hyperlink{simple-egl_8cpp_a332251aa739a56836cd4fbf3ecbb8bb2}{main\_role}, area);
+583     \});
+584 
+585     \textcolor{keywordflow}{return} 0;
+586 \}
+\end{DoxyCode}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!init\+\_\+wm@{init\+\_\+wm}}
+\index{init\+\_\+wm@{init\+\_\+wm}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{init\+\_\+wm(\+Lib\+Windowmanager $\ast$wm, struct window $\ast$window)}{init_wm(LibWindowmanager *wm, struct window *window)}}]{\setlength{\rightskip}{0pt plus 5cm}int init\+\_\+wm (
+\begin{DoxyParamCaption}
+\item[{Lib\+Windowmanager $\ast$}]{wm, }
+\item[{struct {\bf window} $\ast$}]{window}
+\end{DoxyParamCaption}
+)}\hypertarget{simple-egl_8cpp_a644e25276ecdea04f2aa3412c1973927}{}\label{simple-egl_8cpp_a644e25276ecdea04f2aa3412c1973927}
+
+
+Definition at line 527 of file simple-\/egl.\+cpp.
+
+
+\begin{DoxyCode}
+528 \{
+529     \hyperlink{include_2hmi-debug_8h_a0d26d8b8201011dade787236519711c0}{HMI\_DEBUG}(\hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\_prefix},\textcolor{stringliteral}{"called"});
+530 
+531     \textcolor{keywordflow}{if} (\hyperlink{simple-egl_8cpp_ad1513698e07197206c290f94d7669d85}{wm}->init(\hyperlink{simple-egl_8cpp_a300b6806fe6818927fe4df08f2398124}{port}, \hyperlink{simple-egl_8cpp_a623ef6987ef3bd185c07b28b13e46d34}{token}) != 0) \{
+532         \hyperlink{include_2hmi-debug_8h_a65bb6c7cfe38f8a724beab5059d36fb2}{HMI\_ERROR}(\hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\_prefix},\textcolor{stringliteral}{"wm init failed. "});
+533         \textcolor{keywordflow}{return} -1;
+534     \}
+535 
+536     \hyperlink{simple-egl_8cpp_a28f56c9f01ed9f108201950645317cc9}{g\_id\_ivisurf} = \hyperlink{simple-egl_8cpp_ad1513698e07197206c290f94d7669d85}{wm}->requestSurface(\hyperlink{simple-egl_8cpp_a332251aa739a56836cd4fbf3ecbb8bb2}{main\_role});
+537     \textcolor{keywordflow}{if} (\hyperlink{simple-egl_8cpp_a28f56c9f01ed9f108201950645317cc9}{g\_id\_ivisurf} < 0) \{
+538         \hyperlink{include_2hmi-debug_8h_a65bb6c7cfe38f8a724beab5059d36fb2}{HMI\_ERROR}(\hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\_prefix},\textcolor{stringliteral}{"wm request surface failed "});
+539         \textcolor{keywordflow}{return} -1;
+540     \}
+541     \hyperlink{include_2hmi-debug_8h_a0d26d8b8201011dade787236519711c0}{HMI\_DEBUG}(\hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\_prefix},\textcolor{stringliteral}{"IVI\_SURFACE\_ID: %d "}, \hyperlink{simple-egl_8cpp_a28f56c9f01ed9f108201950645317cc9}{g\_id\_ivisurf});
+542 
+543     WMHandler wmh;
+544     wmh.on\_visible = [](\textcolor{keyword}{const} \textcolor{keywordtype}{char}* role, \textcolor{keywordtype}{bool} visible)\{
+545         \textcolor{comment}{// Sample code if user uses visible event}
+546         \hyperlink{include_2hmi-debug_8h_a0d26d8b8201011dade787236519711c0}{HMI\_DEBUG}(\hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\_prefix}, \textcolor{stringliteral}{"role: %s, visible: %s"}, role, visible ? \textcolor{stringliteral}{"true"} : \textcolor{stringliteral}{"false"})
+      ;
+547     \};
+548     wmh.on\_sync\_draw = [\hyperlink{simple-egl_8cpp_ad1513698e07197206c290f94d7669d85}{wm}, window](\textcolor{keyword}{const} \textcolor{keywordtype}{char}* role, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* area, Rect rect) \{
+549 
+550         \hyperlink{include_2hmi-debug_8h_a0d26d8b8201011dade787236519711c0}{HMI\_DEBUG}(\hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\_prefix},\textcolor{stringliteral}{"Surface %s got syncDraw! Area: %s. w:%d, h:%d"}, role, area
+      , rect.width(), rect.height());
+551 
+552         wl\_egl\_window\_resize(window->\hyperlink{structwindow_ae41be0955d0e73530e1bc13dfeb9d731}{native}, rect.width(), rect.height(), 0, 0);
+553         window->geometry.width  = rect.width();
+554         window->geometry.height = rect.height();
+555 
+556         \hyperlink{simple-egl_8cpp_ad1513698e07197206c290f94d7669d85}{wm}->endDraw(role);
+557     \};
+558 
+559     \hyperlink{simple-egl_8cpp_ad1513698e07197206c290f94d7669d85}{wm}->setEventHandler(wmh);
+560 
+561     \textcolor{keywordflow}{return} 0;
+562 \}
+\end{DoxyCode}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!main@{main}}
+\index{main@{main}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$$\ast$argv)}{main(int argc, char **argv)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\hypertarget{simple-egl_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{simple-egl_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+Definition at line 589 of file simple-\/egl.\+cpp.
+
+
+\begin{DoxyCode}
+590 \{
+591     \textcolor{keyword}{struct }sigaction sigint;
+592     \textcolor{keyword}{struct }\hyperlink{structwindow}{window}  \hyperlink{structwindow}{window}  = \{ 0 \};
+593     \textcolor{keyword}{struct }\hyperlink{structdisplay}{display} \hyperlink{structdisplay}{display} = \{ 0 \};
+594 
+595     window.\hyperlink{structwindow_a129486f2bd23791194f389ca1405cfd4}{display} = &\hyperlink{structdisplay_aa8faf09631925e9221fd8a0c086ce75a}{display};
+596     display.\hyperlink{structdisplay_a9974d560bec291487ae2440f897ffc58}{window} = &\hyperlink{structdisplay_a9974d560bec291487ae2440f897ffc58}{window};
+597     window.geometry.width  = 1080;
+598     window.geometry.height = 1488;
+599     window.\hyperlink{structwindow_ad2b6c8ed8044b41fd1189a0ce26d539a}{window\_size} = window.geometry;
+600     window.\hyperlink{structwindow_a0e634038f669aff472012f25ea250b40}{buffer\_size} = 32;
+601     window.\hyperlink{structwindow_a851bcb65083f5ab5ff768b09522bed70}{frame\_sync} = 1;
+602 
+603     \textcolor{keywordflow}{if}(argc > 2)\{
+604         \hyperlink{simple-egl_8cpp_a300b6806fe6818927fe4df08f2398124}{port} = strtol(argv[1], NULL, 10);
+605         \hyperlink{simple-egl_8cpp_a623ef6987ef3bd185c07b28b13e46d34}{token} = argv[2];
+606     \}
+607 
+608     \hyperlink{include_2hmi-debug_8h_a0d26d8b8201011dade787236519711c0}{HMI\_DEBUG}(\hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\_prefix},\textcolor{stringliteral}{"main\_role: %s, port: %d, token: %s. "}, 
+      \hyperlink{simple-egl_8cpp_a332251aa739a56836cd4fbf3ecbb8bb2}{main\_role}, \hyperlink{simple-egl_8cpp_a300b6806fe6818927fe4df08f2398124}{port}, \hyperlink{simple-egl_8cpp_a623ef6987ef3bd185c07b28b13e46d34}{token}.c\_str());
+609 
+610     display.\hyperlink{structdisplay_aa8faf09631925e9221fd8a0c086ce75a}{display} = wl\_display\_connect(NULL);
+611     assert(display.\hyperlink{structdisplay_aa8faf09631925e9221fd8a0c086ce75a}{display});
+612 
+613     display.\hyperlink{structdisplay_a925781323f5c8eb84ef2225ed129de4b}{registry} = wl\_display\_get\_registry(display.\hyperlink{structdisplay_aa8faf09631925e9221fd8a0c086ce75a}{display});
+614     wl\_registry\_add\_listener(display.\hyperlink{structdisplay_a925781323f5c8eb84ef2225ed129de4b}{registry},
+615                  &\hyperlink{simple-egl_8cpp_a8998c87c94cd7d185e8f0cdafab4b1c4}{registry\_listener}, &display);
+616 
+617     wl\_display\_roundtrip(display.\hyperlink{structdisplay_aa8faf09631925e9221fd8a0c086ce75a}{display});
+618 
+619     \hyperlink{simple-egl_8cpp_a1073d4aca1838d3877fe577d813700fc}{init\_egl}(&display, &window);
+620 
+621     \hyperlink{simple-egl_8cpp_ad1513698e07197206c290f94d7669d85}{wm} = \textcolor{keyword}{new} LibWindowmanager();
+622     \textcolor{keywordflow}{if}(\hyperlink{simple-egl_8cpp_a644e25276ecdea04f2aa3412c1973927}{init\_wm}(\hyperlink{simple-egl_8cpp_ad1513698e07197206c290f94d7669d85}{wm}, &window)!=0)\{
+623         \hyperlink{simple-egl_8cpp_a4f71f46ede5b73bd7c770c973826f771}{fini\_egl}(&display);
+624         \textcolor{keywordflow}{if} (display.\hyperlink{structdisplay_a24c073faff3bb4799c2d46291f27ab89}{ivi\_application})
+625             ivi\_application\_destroy(display.\hyperlink{structdisplay_a24c073faff3bb4799c2d46291f27ab89}{ivi\_application});
+626         \textcolor{keywordflow}{if} (display.\hyperlink{structdisplay_a41ba32dfde812165dda5b62885000c78}{compositor})
+627             wl\_compositor\_destroy(display.\hyperlink{structdisplay_a41ba32dfde812165dda5b62885000c78}{compositor});
+628         wl\_registry\_destroy(display.\hyperlink{structdisplay_a925781323f5c8eb84ef2225ed129de4b}{registry});
+629         wl\_display\_flush(display.\hyperlink{structdisplay_aa8faf09631925e9221fd8a0c086ce75a}{display});
+630         \textcolor{keywordflow}{return} -1;
+631     \}
+632 
+633     \hyperlink{simple-egl_8cpp_a529acbd1fed9d98a587edfa62309fa8d}{hs} = \textcolor{keyword}{new} \hyperlink{class_lib_home_screen}{LibHomeScreen}();
+634     \textcolor{keywordflow}{if}(\hyperlink{simple-egl_8cpp_a79aafeb99915566dd3970246f465f306}{init\_hs}(\hyperlink{simple-egl_8cpp_a529acbd1fed9d98a587edfa62309fa8d}{hs})!=0)\{
+635         \hyperlink{simple-egl_8cpp_a4f71f46ede5b73bd7c770c973826f771}{fini\_egl}(&display);
+636         \textcolor{keywordflow}{if} (display.\hyperlink{structdisplay_a24c073faff3bb4799c2d46291f27ab89}{ivi\_application})
+637             ivi\_application\_destroy(display.\hyperlink{structdisplay_a24c073faff3bb4799c2d46291f27ab89}{ivi\_application});
+638         \textcolor{keywordflow}{if} (display.\hyperlink{structdisplay_a41ba32dfde812165dda5b62885000c78}{compositor})
+639             wl\_compositor\_destroy(display.\hyperlink{structdisplay_a41ba32dfde812165dda5b62885000c78}{compositor});
+640         wl\_registry\_destroy(display.\hyperlink{structdisplay_a925781323f5c8eb84ef2225ed129de4b}{registry});
+641         wl\_display\_flush(display.\hyperlink{structdisplay_aa8faf09631925e9221fd8a0c086ce75a}{display});
+642         \textcolor{keywordflow}{return} -1;
+643     \}
+644 
+645     \hyperlink{simple-egl_8cpp_a83c7f2e34bbc715d97f0642def708293}{create\_surface}(&window);
+646     \hyperlink{simple-egl_8cpp_ab3ee863fa45f4026f78f592d6f6e34ff}{init\_gl}(&window);
+647 
+648     \textcolor{comment}{//Ctrl+C}
+649     sigint.sa\_handler = \hyperlink{simple-egl_8cpp_a2cfc8c2d3fc1273ba8f811d2e639aec8}{signal\_int};
+650     sigemptyset(&sigint.sa\_mask);
+651     sigint.sa\_flags = SA\_RESETHAND;
+652     sigaction(SIGINT, &sigint, NULL);
+653 
+654     eglSwapBuffers(window.\hyperlink{structwindow_a129486f2bd23791194f389ca1405cfd4}{display}->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy}, window.\hyperlink{structwindow_a8de0059f3f1cb0dec33fba1143b7dee1}{egl\_surface});
+655 
+656     \hyperlink{simple-egl_8cpp_ad1513698e07197206c290f94d7669d85}{wm}->activateWindow(\hyperlink{simple-egl_8cpp_a332251aa739a56836cd4fbf3ecbb8bb2}{main\_role});
+657 
+658     \textcolor{comment}{/* The mainloop here is a little subtle.  Redrawing will cause}
+659 \textcolor{comment}{     * EGL to read events so we can just call}
+660 \textcolor{comment}{     * wl\_display\_dispatch\_pending() to handle any events that got}
+661 \textcolor{comment}{     * queued up as a side effect. */}
+662     \textcolor{keywordflow}{while} (\hyperlink{simple-egl_8cpp_a2f45113638a0b749a8a205d2cd7fb42b}{running}) \{
+663         wl\_display\_dispatch\_pending(display.\hyperlink{structdisplay_aa8faf09631925e9221fd8a0c086ce75a}{display});
+664         \hyperlink{simple-egl_8cpp_a927502f6103ec35422eead39e62ab7ba}{redraw}(&window, NULL, 0);
+665     \}
+666 
+667     \hyperlink{include_2hmi-debug_8h_a0d26d8b8201011dade787236519711c0}{HMI\_DEBUG}(\hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\_prefix},\textcolor{stringliteral}{"simple-egl exiting! "});
+668 
+669     \hyperlink{simple-egl_8cpp_aba2ea9aa51701e52d4f36b4f34cecf7a}{destroy\_surface}(&window);
+670     \hyperlink{simple-egl_8cpp_a4f71f46ede5b73bd7c770c973826f771}{fini\_egl}(&display);
+671 
+672     \textcolor{keywordflow}{if} (display.\hyperlink{structdisplay_a24c073faff3bb4799c2d46291f27ab89}{ivi\_application})
+673         ivi\_application\_destroy(display.\hyperlink{structdisplay_a24c073faff3bb4799c2d46291f27ab89}{ivi\_application});
+674 
+675     \textcolor{keywordflow}{if} (display.\hyperlink{structdisplay_a41ba32dfde812165dda5b62885000c78}{compositor})
+676         wl\_compositor\_destroy(display.\hyperlink{structdisplay_a41ba32dfde812165dda5b62885000c78}{compositor});
+677 
+678     wl\_registry\_destroy(display.\hyperlink{structdisplay_a925781323f5c8eb84ef2225ed129de4b}{registry});
+679     wl\_display\_flush(display.\hyperlink{structdisplay_aa8faf09631925e9221fd8a0c086ce75a}{display});
+680     wl\_display\_disconnect(display.\hyperlink{structdisplay_aa8faf09631925e9221fd8a0c086ce75a}{display});
+681 
+682     \textcolor{keywordflow}{return} 0;
+683 \}
+\end{DoxyCode}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!redraw@{redraw}}
+\index{redraw@{redraw}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{redraw(void $\ast$data, struct wl\+\_\+callback $\ast$callback, uint32\+\_\+t time)}{redraw(void *data, struct wl_callback *callback, uint32_t time)}}]{\setlength{\rightskip}{0pt plus 5cm}static void redraw (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data, }
+\item[{struct wl\+\_\+callback $\ast$}]{callback, }
+\item[{uint32\+\_\+t}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_a927502f6103ec35422eead39e62ab7ba}{}\label{simple-egl_8cpp_a927502f6103ec35422eead39e62ab7ba}
+
+
+Definition at line 389 of file simple-\/egl.\+cpp.
+
+
+\begin{DoxyCode}
+390 \{
+391     \textcolor{keyword}{struct }\hyperlink{structwindow}{window} *\hyperlink{structwindow}{window} = data;
+392     \textcolor{keyword}{struct }\hyperlink{structdisplay}{display} *\hyperlink{structdisplay}{display} = window->\hyperlink{structwindow_a129486f2bd23791194f389ca1405cfd4}{display};
+393     \textcolor{keyword}{static} \textcolor{keyword}{const} GLfloat verts[3][2] = \{
+394         \{ -0.5, -0.5 \},
+395         \{  0.5, -0.5 \},
+396         \{  0,    0.5 \}
+397     \};
+398 
+399     \textcolor{keyword}{static} \textcolor{keyword}{const} GLfloat colors[3][3] = \{
+400         \{ 1, 0, 0 \},
+401         \{ 0, 1, 0 \},
+402         \{ 0, 0, 1 \}
+403     \};
+404 
+405     GLfloat angle;
+406     GLfloat rotation[4][4] = \{
+407         \{ 1, 0, 0, 0 \},
+408         \{ 0, 1, 0, 0 \},
+409         \{ 0, 0, 1, 0 \},
+410         \{ 0, 0, 0, 1 \}
+411     \};
+412     \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t speed\_div = 5, benchmark\_interval = 5;
+413     \textcolor{keyword}{struct }wl\_region *region;
+414     EGLint rect[4];
+415     EGLint buffer\_age = 0;
+416     \textcolor{keyword}{struct }timeval tv;
+417 
+418     assert(window->\hyperlink{structwindow_a35ba639556fa19d9273dad0953a6807e}{callback} == callback);
+419     window->\hyperlink{structwindow_a35ba639556fa19d9273dad0953a6807e}{callback} = NULL;
+420 
+421     \textcolor{keywordflow}{if} (callback)
+422         wl\_callback\_destroy(callback);
+423 
+424     gettimeofday(&tv, NULL);
+425     time = tv.tv\_sec * 1000 + tv.tv\_usec / 1000;
+426     \textcolor{keywordflow}{if} (window->\hyperlink{structwindow_a633864bb495ec265bee220a5c70cc98f}{frames} == 0)
+427         window->\hyperlink{structwindow_a72629bf021a361ad900504732a74cb68}{benchmark\_time} = time;
+428 
+429     \textcolor{keywordflow}{if} (time - window->\hyperlink{structwindow_a72629bf021a361ad900504732a74cb68}{benchmark\_time} > (benchmark\_interval * 1000)) \{
+430         \hyperlink{include_2hmi-debug_8h_a0d26d8b8201011dade787236519711c0}{HMI\_DEBUG}(\hyperlink{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{log\_prefix},\textcolor{stringliteral}{"%d frames in %d seconds: %f fps"},
+431                window->\hyperlink{structwindow_a633864bb495ec265bee220a5c70cc98f}{frames},
+432                benchmark\_interval,
+433                (\textcolor{keywordtype}{float}) window->\hyperlink{structwindow_a633864bb495ec265bee220a5c70cc98f}{frames} / benchmark\_interval);
+434         window->\hyperlink{structwindow_a72629bf021a361ad900504732a74cb68}{benchmark\_time} = time;
+435         window->\hyperlink{structwindow_a633864bb495ec265bee220a5c70cc98f}{frames} = 0;
+436     \}
+437 
+438     angle = (time / speed\_div) % 360 * M\_PI / 180.0;
+439     rotation[0][0] =  cos(angle);
+440     rotation[0][2] =  sin(angle);
+441     rotation[2][0] = -sin(angle);
+442     rotation[2][2] =  cos(angle);
+443 
+444     \textcolor{keywordflow}{if} (display->\hyperlink{structdisplay_a48c46c118e4765ef06596f6341c8f23f}{swap\_buffers\_with\_damage})
+445         eglQuerySurface(display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy}, window->\hyperlink{structwindow_a8de0059f3f1cb0dec33fba1143b7dee1}{egl\_surface},
+446                 \hyperlink{simple-egl_8cpp_a7045d8a6b4857f268a62fab2de2021fd}{EGL\_BUFFER\_AGE\_EXT}, &buffer\_age);
+447 
+448     glViewport(0, 0, window->geometry.width, window->geometry.height);
+449 
+450     glUniformMatrix4fv(window->\hyperlink{structwindow_a6975a930e9a3c166f8201fc4ef5e7728}{gl}.\hyperlink{structwindow_a5202f3b60e262a6fa4fcee68dd47cb67}{rotation\_uniform}, 1, GL\_FALSE,
+451                (GLfloat *) rotation);
+452 
+453     glClearColor(0.0, 0.0, 0.0, 0.5);
+454     glClear(GL\_COLOR\_BUFFER\_BIT);
+455 
+456     glVertexAttribPointer(window->\hyperlink{structwindow_a6975a930e9a3c166f8201fc4ef5e7728}{gl}.\hyperlink{structwindow_aaf965f90f9fc938db2315ff62028c362}{pos}, 2, GL\_FLOAT, GL\_FALSE, 0, verts);
+457     glVertexAttribPointer(window->\hyperlink{structwindow_a6975a930e9a3c166f8201fc4ef5e7728}{gl}.\hyperlink{structwindow_aef10fe94766ccd4831ee611c5ad0e55c}{col}, 3, GL\_FLOAT, GL\_FALSE, 0, colors);
+458     glEnableVertexAttribArray(window->\hyperlink{structwindow_a6975a930e9a3c166f8201fc4ef5e7728}{gl}.\hyperlink{structwindow_aaf965f90f9fc938db2315ff62028c362}{pos});
+459     glEnableVertexAttribArray(window->\hyperlink{structwindow_a6975a930e9a3c166f8201fc4ef5e7728}{gl}.\hyperlink{structwindow_aef10fe94766ccd4831ee611c5ad0e55c}{col});
+460 
+461     glDrawArrays(GL\_TRIANGLES, 0, 3);
+462 
+463     glDisableVertexAttribArray(window->\hyperlink{structwindow_a6975a930e9a3c166f8201fc4ef5e7728}{gl}.\hyperlink{structwindow_aaf965f90f9fc938db2315ff62028c362}{pos});
+464     glDisableVertexAttribArray(window->\hyperlink{structwindow_a6975a930e9a3c166f8201fc4ef5e7728}{gl}.\hyperlink{structwindow_aef10fe94766ccd4831ee611c5ad0e55c}{col});
+465 
+466     \textcolor{keywordflow}{if} (window->\hyperlink{structwindow_a026a50808d8323a5a73d585c19916fa8}{opaque} || window->\hyperlink{structwindow_a8da44798a9e1feb7ed3fbd18ec3a28b6}{fullscreen}) \{
+467         region = wl\_compositor\_create\_region(window->\hyperlink{structwindow_a129486f2bd23791194f389ca1405cfd4}{display}->\hyperlink{structdisplay_a41ba32dfde812165dda5b62885000c78}{compositor});
+468         wl\_region\_add(region, 0, 0,
+469                   window->geometry.width,
+470                   window->geometry.height);
+471         wl\_surface\_set\_opaque\_region(window->\hyperlink{structwindow_a7d0790cfc7c30621611fa26ab5c1ae97}{surface}, region);
+472         wl\_region\_destroy(region);
+473     \} \textcolor{keywordflow}{else} \{
+474         wl\_surface\_set\_opaque\_region(window->\hyperlink{structwindow_a7d0790cfc7c30621611fa26ab5c1ae97}{surface}, NULL);
+475     \}
+476 
+477     \textcolor{keywordflow}{if} (display->\hyperlink{structdisplay_a48c46c118e4765ef06596f6341c8f23f}{swap\_buffers\_with\_damage} && buffer\_age > 0) \{
+478         rect[0] = window->geometry.width / 4 - 1;
+479         rect[1] = window->geometry.height / 4 - 1;
+480         rect[2] = window->geometry.width / 2 + 2;
+481         rect[3] = window->geometry.height / 2 + 2;
+482         display->\hyperlink{structdisplay_a48c46c118e4765ef06596f6341c8f23f}{swap\_buffers\_with\_damage}(display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.
+      \hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy},
+483                           window->\hyperlink{structwindow_a8de0059f3f1cb0dec33fba1143b7dee1}{egl\_surface},
+484                           rect, 1);
+485     \} \textcolor{keywordflow}{else} \{
+486         eglSwapBuffers(display->\hyperlink{structdisplay_a8b8bc104c19ff228d476a377e572d9c7}{egl}.\hyperlink{structdisplay_a8a1cbda15a286e41e89a85f158ce9311}{dpy}, window->\hyperlink{structwindow_a8de0059f3f1cb0dec33fba1143b7dee1}{egl\_surface});
+487     \}
+488 
+489     window->\hyperlink{structwindow_a633864bb495ec265bee220a5c70cc98f}{frames}++;
+490 \}
+\end{DoxyCode}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!registry\+\_\+handle\+\_\+global@{registry\+\_\+handle\+\_\+global}}
+\index{registry\+\_\+handle\+\_\+global@{registry\+\_\+handle\+\_\+global}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{registry\+\_\+handle\+\_\+global(void $\ast$data, struct wl\+\_\+registry $\ast$registry, uint32\+\_\+t name, const char $\ast$interface, uint32\+\_\+t version)}{registry_handle_global(void *data, struct wl_registry *registry, uint32_t name, const char *interface, uint32_t version)}}]{\setlength{\rightskip}{0pt plus 5cm}static void registry\+\_\+handle\+\_\+global (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data, }
+\item[{struct wl\+\_\+registry $\ast$}]{registry, }
+\item[{uint32\+\_\+t}]{name, }
+\item[{const char $\ast$}]{interface, }
+\item[{uint32\+\_\+t}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_af288e02a94c196a68b327fc55c049932}{}\label{simple-egl_8cpp_af288e02a94c196a68b327fc55c049932}
+
+
+Definition at line 493 of file simple-\/egl.\+cpp.
+
+
+\begin{DoxyCode}
+495 \{
+496     \textcolor{keyword}{struct }\hyperlink{structdisplay}{display} *d = data;
+497 
+498     \textcolor{keywordflow}{if} (strcmp(interface, \textcolor{stringliteral}{"wl\_compositor"}) == 0) \{
+499         d->\hyperlink{structdisplay_a41ba32dfde812165dda5b62885000c78}{compositor} =
+500             wl\_registry\_bind(\hyperlink{structdisplay_a925781323f5c8eb84ef2225ed129de4b}{registry}, name,
+501                      &wl\_compositor\_interface, 1);
+502     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(interface, \textcolor{stringliteral}{"ivi\_application"}) == 0) \{
+503         d->\hyperlink{structdisplay_a24c073faff3bb4799c2d46291f27ab89}{ivi\_application} =
+504             wl\_registry\_bind(\hyperlink{structdisplay_a925781323f5c8eb84ef2225ed129de4b}{registry}, name,
+505                      &\hyperlink{simple-egl_8cpp_a769b65b7b0e834f732f1f45e835890d5}{ivi\_application\_interface}, 1);
+506     \}
+507 \}
+\end{DoxyCode}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!registry\+\_\+handle\+\_\+global\+\_\+remove@{registry\+\_\+handle\+\_\+global\+\_\+remove}}
+\index{registry\+\_\+handle\+\_\+global\+\_\+remove@{registry\+\_\+handle\+\_\+global\+\_\+remove}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{registry\+\_\+handle\+\_\+global\+\_\+remove(void $\ast$data, struct wl\+\_\+registry $\ast$registry, uint32\+\_\+t name)}{registry_handle_global_remove(void *data, struct wl_registry *registry, uint32_t name)}}]{\setlength{\rightskip}{0pt plus 5cm}static void registry\+\_\+handle\+\_\+global\+\_\+remove (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data, }
+\item[{struct wl\+\_\+registry $\ast$}]{registry, }
+\item[{uint32\+\_\+t}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_a59a731b9efa9d6a2015cdc8ccae1db80}{}\label{simple-egl_8cpp_a59a731b9efa9d6a2015cdc8ccae1db80}
+
+
+Definition at line 510 of file simple-\/egl.\+cpp.
+
+
+\begin{DoxyCode}
+512 \{
+513 \}
+\end{DoxyCode}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!signal\+\_\+int@{signal\+\_\+int}}
+\index{signal\+\_\+int@{signal\+\_\+int}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{signal\+\_\+int(int signum)}{signal_int(int signum)}}]{\setlength{\rightskip}{0pt plus 5cm}static void signal\+\_\+int (
+\begin{DoxyParamCaption}
+\item[{int}]{signum}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_a2cfc8c2d3fc1273ba8f811d2e639aec8}{}\label{simple-egl_8cpp_a2cfc8c2d3fc1273ba8f811d2e639aec8}
+
+
+Definition at line 521 of file simple-\/egl.\+cpp.
+
+
+\begin{DoxyCode}
+522 \{
+523     \hyperlink{simple-egl_8cpp_a2f45113638a0b749a8a205d2cd7fb42b}{running} = 0;
+524 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!app\+\_\+name@{app\+\_\+name}}
+\index{app\+\_\+name@{app\+\_\+name}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{app\+\_\+name}{app_name}}]{\setlength{\rightskip}{0pt plus 5cm}string app\+\_\+name = string(\char`\"{}Navigation\char`\"{})}\hypertarget{simple-egl_8cpp_a0da928eccfc57d1dfadfd29d4ac4854c}{}\label{simple-egl_8cpp_a0da928eccfc57d1dfadfd29d4ac4854c}
+
+
+Definition at line 63 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!frag\+\_\+shader\+\_\+text@{frag\+\_\+shader\+\_\+text}}
+\index{frag\+\_\+shader\+\_\+text@{frag\+\_\+shader\+\_\+text}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{frag\+\_\+shader\+\_\+text}{frag_shader_text}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ frag\+\_\+shader\+\_\+text\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_ab5a6a2a26ac23f79b1687daa4b0d8980}{}\label{simple-egl_8cpp_ab5a6a2a26ac23f79b1687daa4b0d8980}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    \textcolor{stringliteral}{"precision mediump float;\(\backslash\)n"}
+    \textcolor{stringliteral}{"varying vec4 v\_color;\(\backslash\)n"}
+    \textcolor{stringliteral}{"void main() \{\(\backslash\)n"}
+    \textcolor{stringliteral}{"  gl\_FragColor = v\_color;\(\backslash\)n"}
+    \textcolor{stringliteral}{"\}\(\backslash\)n"}
+\end{DoxyCode}
+
+
+Definition at line 164 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!g\+\_\+id\+\_\+ivisurf@{g\+\_\+id\+\_\+ivisurf}}
+\index{g\+\_\+id\+\_\+ivisurf@{g\+\_\+id\+\_\+ivisurf}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{g\+\_\+id\+\_\+ivisurf}{g_id_ivisurf}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t g\+\_\+id\+\_\+ivisurf = 9009}\hypertarget{simple-egl_8cpp_a28f56c9f01ed9f108201950645317cc9}{}\label{simple-egl_8cpp_a28f56c9f01ed9f108201950645317cc9}
+
+
+Definition at line 59 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!hs@{hs}}
+\index{hs@{hs}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{hs}{hs}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lib\+Home\+Screen}$\ast$ hs}\hypertarget{simple-egl_8cpp_a529acbd1fed9d98a587edfa62309fa8d}{}\label{simple-egl_8cpp_a529acbd1fed9d98a587edfa62309fa8d}
+
+
+Definition at line 66 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!ivi\+\_\+application\+\_\+interface@{ivi\+\_\+application\+\_\+interface}}
+\index{ivi\+\_\+application\+\_\+interface@{ivi\+\_\+application\+\_\+interface}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{ivi\+\_\+application\+\_\+interface}{ivi_application_interface}}]{\setlength{\rightskip}{0pt plus 5cm}const struct wl\+\_\+interface ivi\+\_\+application\+\_\+interface}\hypertarget{simple-egl_8cpp_a769b65b7b0e834f732f1f45e835890d5}{}\label{simple-egl_8cpp_a769b65b7b0e834f732f1f45e835890d5}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \textcolor{stringliteral}{"ivi\_application"}, 1,
+    1, \hyperlink{simple-egl_8cpp_a21a39b7c6cf5f6d10a62a70b3ebc9bad}{ivi\_application\_requests},
+    0, NULL,
+\}
+\end{DoxyCode}
+
+
+Definition at line 95 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!ivi\+\_\+application\+\_\+requests@{ivi\+\_\+application\+\_\+requests}}
+\index{ivi\+\_\+application\+\_\+requests@{ivi\+\_\+application\+\_\+requests}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{ivi\+\_\+application\+\_\+requests}{ivi_application_requests}}]{\setlength{\rightskip}{0pt plus 5cm}const struct wl\+\_\+message ivi\+\_\+application\+\_\+requests\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_a21a39b7c6cf5f6d10a62a70b3ebc9bad}{}\label{simple-egl_8cpp_a21a39b7c6cf5f6d10a62a70b3ebc9bad}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+        \{ \textcolor{stringliteral}{"surface\_create"}, \textcolor{stringliteral}{"uon"}, \hyperlink{simple-egl_8cpp_aea3203db9e218d3e5d60bdb4ebe2fa1f}{types} + 2 \},
+\}
+\end{DoxyCode}
+
+
+Definition at line 91 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!ivi\+\_\+surface\+\_\+events@{ivi\+\_\+surface\+\_\+events}}
+\index{ivi\+\_\+surface\+\_\+events@{ivi\+\_\+surface\+\_\+events}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{ivi\+\_\+surface\+\_\+events}{ivi_surface_events}}]{\setlength{\rightskip}{0pt plus 5cm}const struct wl\+\_\+message ivi\+\_\+surface\+\_\+events\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_ac848f4fbf712a9ba414272fa85577791}{}\label{simple-egl_8cpp_ac848f4fbf712a9ba414272fa85577791}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+        \{ \textcolor{stringliteral}{"configure"}, \textcolor{stringliteral}{"ii"}, \hyperlink{simple-egl_8cpp_aea3203db9e218d3e5d60bdb4ebe2fa1f}{types} + 0 \},
+\}
+\end{DoxyCode}
+
+
+Definition at line 81 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!ivi\+\_\+surface\+\_\+interface@{ivi\+\_\+surface\+\_\+interface}}
+\index{ivi\+\_\+surface\+\_\+interface@{ivi\+\_\+surface\+\_\+interface}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{ivi\+\_\+surface\+\_\+interface}{ivi_surface_interface}}]{\setlength{\rightskip}{0pt plus 5cm}const struct wl\+\_\+interface ivi\+\_\+surface\+\_\+interface}\hypertarget{simple-egl_8cpp_adf384de8d12d2edd7265ab85fd16b11c}{}\label{simple-egl_8cpp_adf384de8d12d2edd7265ab85fd16b11c}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+        \textcolor{stringliteral}{"ivi\_surface"}, 1,
+        1, \hyperlink{simple-egl_8cpp_ada80120c5590d2821da9babef808b98d}{ivi\_surface\_requests},
+        1, \hyperlink{simple-egl_8cpp_ac848f4fbf712a9ba414272fa85577791}{ivi\_surface\_events},
+\}
+\end{DoxyCode}
+
+
+Definition at line 85 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!ivi\+\_\+surface\+\_\+requests@{ivi\+\_\+surface\+\_\+requests}}
+\index{ivi\+\_\+surface\+\_\+requests@{ivi\+\_\+surface\+\_\+requests}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{ivi\+\_\+surface\+\_\+requests}{ivi_surface_requests}}]{\setlength{\rightskip}{0pt plus 5cm}const struct wl\+\_\+message ivi\+\_\+surface\+\_\+requests\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_ada80120c5590d2821da9babef808b98d}{}\label{simple-egl_8cpp_ada80120c5590d2821da9babef808b98d}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+        \{ \textcolor{stringliteral}{"destroy"}, \textcolor{stringliteral}{""}, \hyperlink{simple-egl_8cpp_aea3203db9e218d3e5d60bdb4ebe2fa1f}{types} + 0 \},
+\}
+\end{DoxyCode}
+
+
+Definition at line 77 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!log\+\_\+prefix@{log\+\_\+prefix}}
+\index{log\+\_\+prefix@{log\+\_\+prefix}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{log\+\_\+prefix}{log_prefix}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ log\+\_\+prefix = \char`\"{}simple-\/egl\char`\"{}}\hypertarget{simple-egl_8cpp_a894f18168fa25101d792262f59846938}{}\label{simple-egl_8cpp_a894f18168fa25101d792262f59846938}
+
+
+Definition at line 58 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!main\+\_\+role@{main\+\_\+role}}
+\index{main\+\_\+role@{main\+\_\+role}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{main\+\_\+role}{main_role}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ main\+\_\+role = \char`\"{}navigation\char`\"{}}\hypertarget{simple-egl_8cpp_a332251aa739a56836cd4fbf3ecbb8bb2}{}\label{simple-egl_8cpp_a332251aa739a56836cd4fbf3ecbb8bb2}
+
+
+Definition at line 64 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!port@{port}}
+\index{port@{port}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{port}{port}}]{\setlength{\rightskip}{0pt plus 5cm}long port = 1700}\hypertarget{simple-egl_8cpp_a300b6806fe6818927fe4df08f2398124}{}\label{simple-egl_8cpp_a300b6806fe6818927fe4df08f2398124}
+
+
+Definition at line 60 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!registry\+\_\+listener@{registry\+\_\+listener}}
+\index{registry\+\_\+listener@{registry\+\_\+listener}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{registry\+\_\+listener}{registry_listener}}]{\setlength{\rightskip}{0pt plus 5cm}const struct wl\+\_\+registry\+\_\+listener registry\+\_\+listener\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_a8998c87c94cd7d185e8f0cdafab4b1c4}{}\label{simple-egl_8cpp_a8998c87c94cd7d185e8f0cdafab4b1c4}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \hyperlink{simple-egl_8cpp_af288e02a94c196a68b327fc55c049932}{registry\_handle\_global},
+    \hyperlink{simple-egl_8cpp_a59a731b9efa9d6a2015cdc8ccae1db80}{registry\_handle\_global\_remove}
+\}
+\end{DoxyCode}
+
+
+Definition at line 515 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!running@{running}}
+\index{running@{running}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{running}{running}}]{\setlength{\rightskip}{0pt plus 5cm}int running = 1\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_a2f45113638a0b749a8a205d2cd7fb42b}{}\label{simple-egl_8cpp_a2f45113638a0b749a8a205d2cd7fb42b}
+
+
+Definition at line 171 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!token@{token}}
+\index{token@{token}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{token}{token}}]{\setlength{\rightskip}{0pt plus 5cm}string token = string(\char`\"{}wm\char`\"{})}\hypertarget{simple-egl_8cpp_a623ef6987ef3bd185c07b28b13e46d34}{}\label{simple-egl_8cpp_a623ef6987ef3bd185c07b28b13e46d34}
+
+
+Definition at line 61 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!types@{types}}
+\index{types@{types}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{types}{types}}]{\setlength{\rightskip}{0pt plus 5cm}const struct wl\+\_\+interface$\ast$ types\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_aea3203db9e218d3e5d60bdb4ebe2fa1f}{}\label{simple-egl_8cpp_aea3203db9e218d3e5d60bdb4ebe2fa1f}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+        NULL,
+        NULL,
+        NULL,
+        &wl\_surface\_interface,
+        &\hyperlink{simple-egl_8cpp_adf384de8d12d2edd7265ab85fd16b11c}{ivi\_surface\_interface},
+\}
+\end{DoxyCode}
+
+
+Definition at line 69 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!vert\+\_\+shader\+\_\+text@{vert\+\_\+shader\+\_\+text}}
+\index{vert\+\_\+shader\+\_\+text@{vert\+\_\+shader\+\_\+text}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{vert\+\_\+shader\+\_\+text}{vert_shader_text}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ vert\+\_\+shader\+\_\+text\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{simple-egl_8cpp_a717575939a37d84dcd4cf0447a630834}{}\label{simple-egl_8cpp_a717575939a37d84dcd4cf0447a630834}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    \textcolor{stringliteral}{"uniform mat4 rotation;\(\backslash\)n"}
+    \textcolor{stringliteral}{"attribute vec4 pos;\(\backslash\)n"}
+    \textcolor{stringliteral}{"attribute vec4 color;\(\backslash\)n"}
+    \textcolor{stringliteral}{"varying vec4 v\_color;\(\backslash\)n"}
+    \textcolor{stringliteral}{"void main() \{\(\backslash\)n"}
+    \textcolor{stringliteral}{"  gl\_Position = rotation * pos;\(\backslash\)n"}
+    \textcolor{stringliteral}{"  v\_color = color;\(\backslash\)n"}
+    \textcolor{stringliteral}{"\}\(\backslash\)n"}
+\end{DoxyCode}
+
+
+Definition at line 154 of file simple-\/egl.\+cpp.
+
+\index{simple-\/egl.\+cpp@{simple-\/egl.\+cpp}!wm@{wm}}
+\index{wm@{wm}!simple-\/egl.\+cpp@{simple-\/egl.\+cpp}}
+\subsubsection[{\texorpdfstring{wm}{wm}}]{\setlength{\rightskip}{0pt plus 5cm}Lib\+Windowmanager$\ast$ wm}\hypertarget{simple-egl_8cpp_ad1513698e07197206c290f94d7669d85}{}\label{simple-egl_8cpp_ad1513698e07197206c290f94d7669d85}
+
+
+Definition at line 67 of file simple-\/egl.\+cpp.
+

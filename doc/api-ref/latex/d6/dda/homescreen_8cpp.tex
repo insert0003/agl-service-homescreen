@@ -1,0 +1,672 @@
+\hypertarget{homescreen_8cpp}{}\section{src/homescreen.cpp File Reference}
+\label{homescreen_8cpp}\index{src/homescreen.\+cpp@{src/homescreen.\+cpp}}
+{\ttfamily \#include $<$memory$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include \char`\"{}hs-\/helper.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hmi-\/debug.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hs-\/clientmanager.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{homescreen_8cpp_a369266c24eacffb87046522897a570d5}{\+\_\+\+G\+N\+U\+\_\+\+S\+O\+U\+R\+CE}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{homescreen_8cpp_ace65cfe6008848a3cd66581f536cc4c9}{ping\+Sample} (afb\+\_\+req\+\_\+t request)
+\item 
+static void \hyperlink{homescreen_8cpp_ab8abb667377924d5c073611738febbd3}{tap\+\_\+shortcut} (afb\+\_\+req\+\_\+t request)
+\item 
+static void \hyperlink{homescreen_8cpp_a0df2b60ff6cd56b53dc87b36bfee2b91}{on\+\_\+screen\+\_\+message} (afb\+\_\+req\+\_\+t request)
+\item 
+static void \hyperlink{homescreen_8cpp_a7443596f6ddf459824ecd8138c681532}{on\+\_\+screen\+\_\+reply} (afb\+\_\+req\+\_\+t request)
+\item 
+static void \hyperlink{homescreen_8cpp_a6e942ab2b7207d2aef9adce71a4574e8}{subscribe} (afb\+\_\+req\+\_\+t request)
+\item 
+static void \hyperlink{homescreen_8cpp_a3b162ab1856a8fa4284cb2c5c35ea748}{unsubscribe} (afb\+\_\+req\+\_\+t request)
+\item 
+static void \hyperlink{homescreen_8cpp_ae475c69e7ca2a539ae0fb40a82963ac1}{show\+Window} (afb\+\_\+req\+\_\+t request)
+\item 
+static void \hyperlink{homescreen_8cpp_a057c380ea38cfba4e2fbccc40fc21798}{hide\+Window} (afb\+\_\+req\+\_\+t request)
+\item 
+static void \hyperlink{homescreen_8cpp_a710bcc84a61e11dbd4517def2764ff95}{reply\+Show\+Window} (afb\+\_\+req\+\_\+t request)
+\item 
+static void \hyperlink{homescreen_8cpp_ad96a84455e8676abb4486e48ef67b1ad}{show\+Notification} (afb\+\_\+req\+\_\+t request)
+\item 
+static void \hyperlink{homescreen_8cpp_a916c8dd31373222ee2b6ef89aca91978}{show\+Information} (afb\+\_\+req\+\_\+t request)
+\item 
+static int \hyperlink{homescreen_8cpp_ab3b1914acb53dcc038c1cf86c2975785}{preinit} (afb\+\_\+api\+\_\+t api)
+\item 
+static int \hyperlink{homescreen_8cpp_a5d7de3437d5dcb79fa035959d95878db}{init} (afb\+\_\+api\+\_\+t api)
+\item 
+static void \hyperlink{homescreen_8cpp_a60665935681c76d38b3833912109cdd3}{onevent} (afb\+\_\+api\+\_\+t api, const char $\ast$event, struct json\+\_\+object $\ast$object)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \hyperlink{homescreen_8cpp_aed1c5296a2e6d34945507a0fca17a376}{\+\_\+error} \mbox{[}$\,$\mbox{]} = \char`\"{}error\char`\"{}
+\item 
+const char \hyperlink{homescreen_8cpp_a6a0e1db2562b442f8131ddf64b61d1ba}{\+\_\+application\+\_\+id} \mbox{[}$\,$\mbox{]} = \char`\"{}application\+\_\+id\char`\"{}
+\item 
+const char \hyperlink{homescreen_8cpp_abfd6c1d6f316fa952b11553f8f275e92}{\+\_\+display\+\_\+message} \mbox{[}$\,$\mbox{]} = \char`\"{}display\+\_\+message\char`\"{}
+\item 
+const char \hyperlink{homescreen_8cpp_a79b0f0b481161527ccb80e83da143219}{\+\_\+reply\+\_\+message} \mbox{[}$\,$\mbox{]} = \char`\"{}reply\+\_\+message\char`\"{}
+\item 
+static \hyperlink{class_h_s___client_manager}{H\+S\+\_\+\+Client\+Manager} $\ast$ \hyperlink{homescreen_8cpp_a501f5bca8425de3171d46e0723f466ec}{g\+\_\+client\+\_\+manager} = \hyperlink{class_h_s___client_manager_ad86c1fea7d107d52cbf0466fb7a2658b}{H\+S\+\_\+\+Client\+Manager\+::instance}()
+\item 
+static const afb\+\_\+verb\+\_\+t \hyperlink{homescreen_8cpp_a01e06b6317acebc1d5686386b15f0872}{verbs} \mbox{[}$\,$\mbox{]}
+\item 
+const afb\+\_\+binding\+\_\+t \hyperlink{homescreen_8cpp_a970e7864dba290a0371534ad4961bcc5}{afb\+Binding\+Export}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!\+\_\+\+G\+N\+U\+\_\+\+S\+O\+U\+R\+CE@{\+\_\+\+G\+N\+U\+\_\+\+S\+O\+U\+R\+CE}}
+\index{\+\_\+\+G\+N\+U\+\_\+\+S\+O\+U\+R\+CE@{\+\_\+\+G\+N\+U\+\_\+\+S\+O\+U\+R\+CE}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+\+G\+N\+U\+\_\+\+S\+O\+U\+R\+CE}{_GNU_SOURCE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+G\+N\+U\+\_\+\+S\+O\+U\+R\+CE}\hypertarget{homescreen_8cpp_a369266c24eacffb87046522897a570d5}{}\label{homescreen_8cpp_a369266c24eacffb87046522897a570d5}
+
+
+Definition at line 18 of file homescreen.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!hide\+Window@{hide\+Window}}
+\index{hide\+Window@{hide\+Window}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{hide\+Window(afb\+\_\+req\+\_\+t request)}{hideWindow(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}static void hide\+Window (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_a057c380ea38cfba4e2fbccc40fc21798}{}\label{homescreen_8cpp_a057c380ea38cfba4e2fbccc40fc21798}
+hide\+Window event
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: the request
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 221 of file homescreen.\+cpp.
+
+
+\begin{DoxyCode}
+222 \{
+223     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"called."});
+224 
+225     \textcolor{keywordtype}{int} ret = \hyperlink{homescreen_8cpp_a501f5bca8425de3171d46e0723f466ec}{g\_client\_manager}->\hyperlink{class_h_s___client_manager_a6195694d281a3b97b0345b96c0add1fd}{hideWindow}(request);
+226     \textcolor{keywordflow}{if} (ret != 0) \{
+227       afb\_req\_fail\_f(request, \textcolor{stringliteral}{"failed"}, \textcolor{stringliteral}{"called %s, Unknown parameter"}, \_\_FUNCTION\_\_);
+228       \textcolor{keywordflow}{return};
+229     \}
+230 
+231     \textcolor{comment}{// response to HomeScreen}
+232     \textcolor{keyword}{struct }json\_object *res = json\_object\_new\_object();
+233     \hyperlink{hs-helper_8cpp_ae83604a37134e7bdee3ce4f10bb0b47a}{hs\_add\_object\_to\_json\_object\_func}(res, \_\_FUNCTION\_\_, 2,
+234       \hyperlink{homescreen_8cpp_aed1c5296a2e6d34945507a0fca17a376}{\_error},  ret);
+235     afb\_req\_success(request, res, \textcolor{stringliteral}{"afb\_event\_push event [hideWindow]"});
+236 \}
+\end{DoxyCode}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!init@{init}}
+\index{init@{init}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{init(afb\+\_\+api\+\_\+t api)}{init(afb_api_t api)}}]{\setlength{\rightskip}{0pt plus 5cm}static int init (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+api\+\_\+t}]{api}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_a5d7de3437d5dcb79fa035959d95878db}{}\label{homescreen_8cpp_a5d7de3437d5dcb79fa035959d95878db}
+homescreen binding init function
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item api \+: the api serving the request
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 368 of file homescreen.\+cpp.
+
+
+\begin{DoxyCode}
+369 \{
+370     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"binding init"});
+371 
+372     \hyperlink{homescreen_8cpp_a501f5bca8425de3171d46e0723f466ec}{g\_client\_manager}->\hyperlink{class_h_s___client_manager_ae0b9b18adeffca7822b060ad4ea8a7a1}{init}();
+373 
+374     \textcolor{keywordflow}{return} 0;
+375 \}
+\end{DoxyCode}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!on\+\_\+screen\+\_\+message@{on\+\_\+screen\+\_\+message}}
+\index{on\+\_\+screen\+\_\+message@{on\+\_\+screen\+\_\+message}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{on\+\_\+screen\+\_\+message(afb\+\_\+req\+\_\+t request)}{on_screen_message(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}static void on\+\_\+screen\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_a0df2b60ff6cd56b53dc87b36bfee2b91}{}\label{homescreen_8cpp_a0df2b60ff6cd56b53dc87b36bfee2b91}
+Home\+Screen On\+Screen message
+
+\subparagraph*{Parameters}
+
+Request key
+\begin{DoxyItemize}
+\item display\+\_\+message \+: message for display
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 85 of file homescreen.\+cpp.
+
+
+\begin{DoxyCode}
+86 \{
+87     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"called."});
+88 
+89     \textcolor{keywordtype}{int} ret = \hyperlink{homescreen_8cpp_a501f5bca8425de3171d46e0723f466ec}{g\_client\_manager}->\hyperlink{class_h_s___client_manager_a58ce4a013d3694265dd69f481bf88510}{on\_screen\_message}(request);
+90     \textcolor{keywordflow}{if} (ret != 0) \{
+91       afb\_req\_fail\_f(request, \textcolor{stringliteral}{"failed"}, \textcolor{stringliteral}{"called %s, Unknown parameter"}, \_\_FUNCTION\_\_);
+92       \textcolor{keywordflow}{return};
+93     \}
+94 
+95   \textcolor{comment}{// response to HomeScreen}
+96     \textcolor{keyword}{struct }json\_object *res = json\_object\_new\_object();
+97     \hyperlink{hs-helper_8cpp_ae83604a37134e7bdee3ce4f10bb0b47a}{hs\_add\_object\_to\_json\_object\_func}(res, \_\_FUNCTION\_\_, 2,
+98       \hyperlink{homescreen_8cpp_aed1c5296a2e6d34945507a0fca17a376}{\_error},  ret);
+99     afb\_req\_success(request, res, \textcolor{stringliteral}{"afb\_event\_push event [on\_screen\_message]"});
+100 \}
+\end{DoxyCode}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!on\+\_\+screen\+\_\+reply@{on\+\_\+screen\+\_\+reply}}
+\index{on\+\_\+screen\+\_\+reply@{on\+\_\+screen\+\_\+reply}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{on\+\_\+screen\+\_\+reply(afb\+\_\+req\+\_\+t request)}{on_screen_reply(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}static void on\+\_\+screen\+\_\+reply (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_a7443596f6ddf459824ecd8138c681532}{}\label{homescreen_8cpp_a7443596f6ddf459824ecd8138c681532}
+Home\+Screen On\+Screen Reply
+
+\subparagraph*{Parameters}
+
+Request key
+\begin{DoxyItemize}
+\item reply\+\_\+message \+: message for reply
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 113 of file homescreen.\+cpp.
+
+
+\begin{DoxyCode}
+114 \{
+115     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"called."});
+116 
+117     \textcolor{keywordtype}{int} ret = \hyperlink{homescreen_8cpp_a501f5bca8425de3171d46e0723f466ec}{g\_client\_manager}->\hyperlink{class_h_s___client_manager_aa78f992287e3b8fe93422b331dc9edc5}{on\_screen\_reply}(request);
+118     \textcolor{keywordflow}{if} (ret != 0) \{
+119       afb\_req\_fail\_f(request, \textcolor{stringliteral}{"failed"}, \textcolor{stringliteral}{"called %s, Unknown parameter"}, \_\_FUNCTION\_\_);
+120       \textcolor{keywordflow}{return};
+121     \}
+122 
+123   \textcolor{comment}{// response to HomeScreen}
+124     \textcolor{keyword}{struct }json\_object *res = json\_object\_new\_object();
+125     \hyperlink{hs-helper_8cpp_ae83604a37134e7bdee3ce4f10bb0b47a}{hs\_add\_object\_to\_json\_object\_func}(res, \_\_FUNCTION\_\_, 2,
+126       \hyperlink{homescreen_8cpp_aed1c5296a2e6d34945507a0fca17a376}{\_error},  ret);
+127     afb\_req\_success(request, res, \textcolor{stringliteral}{"afb\_event\_push event [on\_screen\_reply]"});
+128 \}
+\end{DoxyCode}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!onevent@{onevent}}
+\index{onevent@{onevent}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{onevent(afb\+\_\+api\+\_\+t api, const char $\ast$event, struct json\+\_\+object $\ast$object)}{onevent(afb_api_t api, const char *event, struct json_object *object)}}]{\setlength{\rightskip}{0pt plus 5cm}static void onevent (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+api\+\_\+t}]{api, }
+\item[{const char $\ast$}]{event, }
+\item[{struct json\+\_\+object $\ast$}]{object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_a60665935681c76d38b3833912109cdd3}{}\label{homescreen_8cpp_a60665935681c76d38b3833912109cdd3}
+homescreen binding event function
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item api \+: the api serving the request
+\item event \+: event name
+\item object \+: event json object
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 389 of file homescreen.\+cpp.
+
+
+\begin{DoxyCode}
+390 \{
+391    \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"on\_event %s"}, event);
+392 \}
+\end{DoxyCode}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!ping\+Sample@{ping\+Sample}}
+\index{ping\+Sample@{ping\+Sample}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{ping\+Sample(afb\+\_\+req\+\_\+t request)}{pingSample(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}static void ping\+Sample (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_ace65cfe6008848a3cd66581f536cc4c9}{}\label{homescreen_8cpp_ace65cfe6008848a3cd66581f536cc4c9}
+
+
+Definition at line 38 of file homescreen.\+cpp.
+
+
+\begin{DoxyCode}
+39 \{
+40    \textcolor{keyword}{static} \textcolor{keywordtype}{int} pingcount = 0;
+41    afb\_req\_success\_f(request, json\_object\_new\_int(pingcount), \textcolor{stringliteral}{"Ping count = %d"}, pingcount);
+42    \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"Verbosity macro at level notice invoked at ping invocation
+       count = %d"}, pingcount);
+43    pingcount++;
+44 \}
+\end{DoxyCode}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!preinit@{preinit}}
+\index{preinit@{preinit}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{preinit(afb\+\_\+api\+\_\+t api)}{preinit(afb_api_t api)}}]{\setlength{\rightskip}{0pt plus 5cm}static int preinit (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+api\+\_\+t}]{api}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_ab3b1914acb53dcc038c1cf86c2975785}{}\label{homescreen_8cpp_ab3b1914acb53dcc038c1cf86c2975785}
+homescreen binding preinit function
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item api \+: the api serving the request
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 352 of file homescreen.\+cpp.
+
+
+\begin{DoxyCode}
+353 \{
+354    \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"binding preinit (was register)"});
+355    \textcolor{keywordflow}{return} 0;
+356 \}
+\end{DoxyCode}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!reply\+Show\+Window@{reply\+Show\+Window}}
+\index{reply\+Show\+Window@{reply\+Show\+Window}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{reply\+Show\+Window(afb\+\_\+req\+\_\+t request)}{replyShowWindow(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}static void reply\+Show\+Window (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_a710bcc84a61e11dbd4517def2764ff95}{}\label{homescreen_8cpp_a710bcc84a61e11dbd4517def2764ff95}
+reply\+Show\+Window event
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: the request
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 248 of file homescreen.\+cpp.
+
+
+\begin{DoxyCode}
+249 \{
+250     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"called."});
+251 
+252     \textcolor{keywordtype}{int} ret = \hyperlink{homescreen_8cpp_a501f5bca8425de3171d46e0723f466ec}{g\_client\_manager}->\hyperlink{class_h_s___client_manager_a59b1c1e115b5a257a585c41f854f5fdd}{replyShowWindow}(request);
+253     \textcolor{keywordflow}{if} (ret != 0) \{
+254       afb\_req\_fail\_f(request, \textcolor{stringliteral}{"failed"}, \textcolor{stringliteral}{"called %s, Unknown parameter"}, \_\_FUNCTION\_\_);
+255       \textcolor{keywordflow}{return};
+256     \}
+257 
+258     \textcolor{comment}{// response to HomeScreen}
+259     \textcolor{keyword}{struct }json\_object *res = json\_object\_new\_object();
+260     \hyperlink{hs-helper_8cpp_ae83604a37134e7bdee3ce4f10bb0b47a}{hs\_add\_object\_to\_json\_object\_func}(res, \_\_FUNCTION\_\_, 2,
+261       \hyperlink{homescreen_8cpp_aed1c5296a2e6d34945507a0fca17a376}{\_error},  ret);
+262     afb\_req\_success(request, res, \textcolor{stringliteral}{"afb\_event\_push event [replyShowWindow]"});
+263 \}
+\end{DoxyCode}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!show\+Information@{show\+Information}}
+\index{show\+Information@{show\+Information}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{show\+Information(afb\+\_\+req\+\_\+t request)}{showInformation(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}static void show\+Information (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_a916c8dd31373222ee2b6ef89aca91978}{}\label{homescreen_8cpp_a916c8dd31373222ee2b6ef89aca91978}
+show\+Information event
+
+the contents to homescreen which display at bottom area.
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: the request
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 306 of file homescreen.\+cpp.
+
+
+\begin{DoxyCode}
+307 \{
+308     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"called."});
+309 
+310     \textcolor{keywordtype}{int} ret = \hyperlink{homescreen_8cpp_a501f5bca8425de3171d46e0723f466ec}{g\_client\_manager}->\hyperlink{class_h_s___client_manager_a0645294f89c67fd3c9b0cce62a900f69}{showInformation}(request);
+311     \textcolor{keywordflow}{if} (ret != 0) \{
+312       afb\_req\_fail\_f(request, \textcolor{stringliteral}{"failed"}, \textcolor{stringliteral}{"called %s, Unknown parameter"}, \_\_FUNCTION\_\_);
+313       \textcolor{keywordflow}{return};
+314     \}
+315 
+316     \textcolor{comment}{// response to Application}
+317     \textcolor{keyword}{struct }json\_object *res = json\_object\_new\_object();
+318     \hyperlink{hs-helper_8cpp_ae83604a37134e7bdee3ce4f10bb0b47a}{hs\_add\_object\_to\_json\_object\_func}(res, \_\_FUNCTION\_\_, 2,
+319       \hyperlink{homescreen_8cpp_aed1c5296a2e6d34945507a0fca17a376}{\_error},  ret);
+320     afb\_req\_success(request, res, \textcolor{stringliteral}{"afb\_event\_push event [showInformation]"});
+321 \}
+\end{DoxyCode}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!show\+Notification@{show\+Notification}}
+\index{show\+Notification@{show\+Notification}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{show\+Notification(afb\+\_\+req\+\_\+t request)}{showNotification(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}static void show\+Notification (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_ad96a84455e8676abb4486e48ef67b1ad}{}\label{homescreen_8cpp_ad96a84455e8676abb4486e48ef67b1ad}
+show\+Notification event
+
+the contents to homescreen which display at top area.
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: the request
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 277 of file homescreen.\+cpp.
+
+
+\begin{DoxyCode}
+278 \{
+279     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"called."});
+280 
+281     \textcolor{keywordtype}{int} ret = \hyperlink{homescreen_8cpp_a501f5bca8425de3171d46e0723f466ec}{g\_client\_manager}->\hyperlink{class_h_s___client_manager_a857934af280081ca6ac61d9f2cac37c5}{showNotification}(request);
+282     \textcolor{keywordflow}{if} (ret != 0) \{
+283       afb\_req\_fail\_f(request, \textcolor{stringliteral}{"failed"}, \textcolor{stringliteral}{"called %s, Unknown parameter"}, \_\_FUNCTION\_\_);
+284       \textcolor{keywordflow}{return};
+285     \}
+286 
+287     \textcolor{comment}{// response to Application}
+288     \textcolor{keyword}{struct }json\_object *res = json\_object\_new\_object();
+289     \hyperlink{hs-helper_8cpp_ae83604a37134e7bdee3ce4f10bb0b47a}{hs\_add\_object\_to\_json\_object\_func}(res, \_\_FUNCTION\_\_, 2,
+290       \hyperlink{homescreen_8cpp_aed1c5296a2e6d34945507a0fca17a376}{\_error},  ret);
+291     afb\_req\_success(request, res, \textcolor{stringliteral}{"afb\_event\_push event [showNotification]"});
+292 \}
+\end{DoxyCode}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!show\+Window@{show\+Window}}
+\index{show\+Window@{show\+Window}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{show\+Window(afb\+\_\+req\+\_\+t request)}{showWindow(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}static void show\+Window (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_ae475c69e7ca2a539ae0fb40a82963ac1}{}\label{homescreen_8cpp_ae475c69e7ca2a539ae0fb40a82963ac1}
+show\+Window event
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: the request
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 194 of file homescreen.\+cpp.
+
+
+\begin{DoxyCode}
+195 \{
+196     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"called."});
+197 
+198     \textcolor{keywordtype}{int} ret = \hyperlink{homescreen_8cpp_a501f5bca8425de3171d46e0723f466ec}{g\_client\_manager}->\hyperlink{class_h_s___client_manager_afed8158f276d1d22c32b0d89e970d442}{showWindow}(request);
+199     \textcolor{keywordflow}{if} (ret != 0) \{
+200       afb\_req\_fail\_f(request, \textcolor{stringliteral}{"failed"}, \textcolor{stringliteral}{"called %s, Unknown parameter"}, \_\_FUNCTION\_\_);
+201       \textcolor{keywordflow}{return};
+202     \}
+203 
+204     \textcolor{comment}{// response to HomeScreen}
+205     \textcolor{keyword}{struct }json\_object *res = json\_object\_new\_object();
+206     \hyperlink{hs-helper_8cpp_ae83604a37134e7bdee3ce4f10bb0b47a}{hs\_add\_object\_to\_json\_object\_func}(res, \_\_FUNCTION\_\_, 2,
+207       \hyperlink{homescreen_8cpp_aed1c5296a2e6d34945507a0fca17a376}{\_error},  ret);
+208     afb\_req\_success(request, res, \textcolor{stringliteral}{"afb\_event\_push event [showWindow]"});
+209 \}
+\end{DoxyCode}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{subscribe(afb\+\_\+req\+\_\+t request)}{subscribe(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}static void subscribe (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_a6e942ab2b7207d2aef9adce71a4574e8}{}\label{homescreen_8cpp_a6e942ab2b7207d2aef9adce71a4574e8}
+Subscribe event
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item event \+: Event name. Event list is written in \hyperlink{libhomescreen_8cpp}{libhomescreen.\+cpp}
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 140 of file homescreen.\+cpp.
+
+
+\begin{DoxyCode}
+141 \{
+142     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"called."});
+143 
+144     \textcolor{keywordtype}{int} ret = \hyperlink{homescreen_8cpp_a501f5bca8425de3171d46e0723f466ec}{g\_client\_manager}->\hyperlink{class_h_s___client_manager_a1b8a4e42342c4bcdc4e7dc4934e02469}{subscribe}(request);
+145     \textcolor{keywordflow}{if}(ret) \{
+146       afb\_req\_fail\_f(request, \textcolor{stringliteral}{"afb\_req\_subscribe failed"}, \textcolor{stringliteral}{"called %s."}, \_\_FUNCTION\_\_);
+147       \textcolor{keywordflow}{return};
+148     \}
+149 
+150     \textcolor{comment}{/*create response json object*/}
+151     \textcolor{keyword}{struct }json\_object *res = json\_object\_new\_object();
+152     \hyperlink{hs-helper_8cpp_ae83604a37134e7bdee3ce4f10bb0b47a}{hs\_add\_object\_to\_json\_object\_func}(res, \_\_FUNCTION\_\_, 2,
+153         \hyperlink{homescreen_8cpp_aed1c5296a2e6d34945507a0fca17a376}{\_error}, ret);
+154     afb\_req\_success\_f(request, res, \textcolor{stringliteral}{"homescreen binder subscribe."});
+155 \}
+\end{DoxyCode}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!tap\+\_\+shortcut@{tap\+\_\+shortcut}}
+\index{tap\+\_\+shortcut@{tap\+\_\+shortcut}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{tap\+\_\+shortcut(afb\+\_\+req\+\_\+t request)}{tap_shortcut(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}static void tap\+\_\+shortcut (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_ab8abb667377924d5c073611738febbd3}{}\label{homescreen_8cpp_ab8abb667377924d5c073611738febbd3}
+tap\+\_\+shortcut notify for homescreen When Shortcut area is tapped, notify these applciations
+
+\subparagraph*{Parameters}
+
+Request key
+\begin{DoxyItemize}
+\item application\+\_\+id \+: application id
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 58 of file homescreen.\+cpp.
+
+
+\begin{DoxyCode}
+59 \{
+60     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"called."});
+61     \textcolor{keywordtype}{int} ret = \hyperlink{homescreen_8cpp_a501f5bca8425de3171d46e0723f466ec}{g\_client\_manager}->\hyperlink{class_h_s___client_manager_a9910fc27c412530b5b9854b00bd16c07}{tap\_shortcut}(request);
+62     \textcolor{keywordflow}{if} (ret != 0) \{
+63       afb\_req\_fail\_f(request, \textcolor{stringliteral}{"failed"}, \textcolor{stringliteral}{"called %s, Unknown parameter"}, \_\_FUNCTION\_\_);
+64       \textcolor{keywordflow}{return};
+65     \}
+66 
+67     \textcolor{comment}{// response to HomeScreen}
+68     \textcolor{keyword}{struct }json\_object *res = json\_object\_new\_object();
+69     \hyperlink{hs-helper_8cpp_ae83604a37134e7bdee3ce4f10bb0b47a}{hs\_add\_object\_to\_json\_object\_func}(res, \_\_FUNCTION\_\_, 2,
+70       \hyperlink{homescreen_8cpp_aed1c5296a2e6d34945507a0fca17a376}{\_error},  ret);
+71     afb\_req\_success(request, res, \textcolor{stringliteral}{"afb\_event\_push event [tap\_shortcut]"});
+72 \}
+\end{DoxyCode}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!unsubscribe@{unsubscribe}}
+\index{unsubscribe@{unsubscribe}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{unsubscribe(afb\+\_\+req\+\_\+t request)}{unsubscribe(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}static void unsubscribe (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_a3b162ab1856a8fa4284cb2c5c35ea748}{}\label{homescreen_8cpp_a3b162ab1856a8fa4284cb2c5c35ea748}
+Unsubscribe event
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item event \+: Event name. Event list is written in \hyperlink{libhomescreen_8cpp}{libhomescreen.\+cpp}
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 167 of file homescreen.\+cpp.
+
+
+\begin{DoxyCode}
+168 \{
+169     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"called."});
+170 
+171     \textcolor{keywordtype}{int} ret = \hyperlink{homescreen_8cpp_a501f5bca8425de3171d46e0723f466ec}{g\_client\_manager}->\hyperlink{class_h_s___client_manager_ac86314afbb90116e2f02ce071166226e}{unsubscribe}(request);
+172     \textcolor{keywordflow}{if}(ret) \{
+173       afb\_req\_fail\_f(request, \textcolor{stringliteral}{"afb\_req\_unsubscribe failed"}, \textcolor{stringliteral}{"called %s."}, \_\_FUNCTION\_\_);
+174       \textcolor{keywordflow}{return};
+175     \}
+176 
+177     \textcolor{comment}{/*create response json object*/}
+178     \textcolor{keyword}{struct }json\_object *res = json\_object\_new\_object();
+179     \hyperlink{hs-helper_8cpp_ae83604a37134e7bdee3ce4f10bb0b47a}{hs\_add\_object\_to\_json\_object\_func}(res, \_\_FUNCTION\_\_, 2,
+180         \hyperlink{homescreen_8cpp_aed1c5296a2e6d34945507a0fca17a376}{\_error}, ret);
+181     afb\_req\_success\_f(request, res, \textcolor{stringliteral}{"homescreen binder unsubscribe success."});
+182 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\index{homescreen.\+cpp@{homescreen.\+cpp}!\+\_\+application\+\_\+id@{\+\_\+application\+\_\+id}}
+\index{\+\_\+application\+\_\+id@{\+\_\+application\+\_\+id}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+application\+\_\+id}{_application_id}}]{\setlength{\rightskip}{0pt plus 5cm}const char \+\_\+application\+\_\+id\mbox{[}$\,$\mbox{]} = \char`\"{}application\+\_\+id\char`\"{}}\hypertarget{homescreen_8cpp_a6a0e1db2562b442f8131ddf64b61d1ba}{}\label{homescreen_8cpp_a6a0e1db2562b442f8131ddf64b61d1ba}
+
+
+Definition at line 28 of file homescreen.\+cpp.
+
+\index{homescreen.\+cpp@{homescreen.\+cpp}!\+\_\+display\+\_\+message@{\+\_\+display\+\_\+message}}
+\index{\+\_\+display\+\_\+message@{\+\_\+display\+\_\+message}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+display\+\_\+message}{_display_message}}]{\setlength{\rightskip}{0pt plus 5cm}const char \+\_\+display\+\_\+message\mbox{[}$\,$\mbox{]} = \char`\"{}display\+\_\+message\char`\"{}}\hypertarget{homescreen_8cpp_abfd6c1d6f316fa952b11553f8f275e92}{}\label{homescreen_8cpp_abfd6c1d6f316fa952b11553f8f275e92}
+
+
+Definition at line 29 of file homescreen.\+cpp.
+
+\index{homescreen.\+cpp@{homescreen.\+cpp}!\+\_\+error@{\+\_\+error}}
+\index{\+\_\+error@{\+\_\+error}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+error}{_error}}]{\setlength{\rightskip}{0pt plus 5cm}const char \+\_\+error\mbox{[}$\,$\mbox{]} = \char`\"{}error\char`\"{}}\hypertarget{homescreen_8cpp_aed1c5296a2e6d34945507a0fca17a376}{}\label{homescreen_8cpp_aed1c5296a2e6d34945507a0fca17a376}
+
+
+Definition at line 27 of file homescreen.\+cpp.
+
+\index{homescreen.\+cpp@{homescreen.\+cpp}!\+\_\+reply\+\_\+message@{\+\_\+reply\+\_\+message}}
+\index{\+\_\+reply\+\_\+message@{\+\_\+reply\+\_\+message}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+reply\+\_\+message}{_reply_message}}]{\setlength{\rightskip}{0pt plus 5cm}const char \+\_\+reply\+\_\+message\mbox{[}$\,$\mbox{]} = \char`\"{}reply\+\_\+message\char`\"{}}\hypertarget{homescreen_8cpp_a79b0f0b481161527ccb80e83da143219}{}\label{homescreen_8cpp_a79b0f0b481161527ccb80e83da143219}
+
+
+Definition at line 30 of file homescreen.\+cpp.
+
+\index{homescreen.\+cpp@{homescreen.\+cpp}!afb\+Binding\+Export@{afb\+Binding\+Export}}
+\index{afb\+Binding\+Export@{afb\+Binding\+Export}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{afb\+Binding\+Export}{afbBindingExport}}]{\setlength{\rightskip}{0pt plus 5cm}const afb\+\_\+binding\+\_\+t afb\+Binding\+Export}\hypertarget{homescreen_8cpp_a970e7864dba290a0371534ad4961bcc5}{}\label{homescreen_8cpp_a970e7864dba290a0371534ad4961bcc5}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    .api = \textcolor{stringliteral}{"homescreen"},
+    .specification = NULL,
+    .info = NULL,
+    .verbs = \hyperlink{homescreen_8cpp_a01e06b6317acebc1d5686386b15f0872}{verbs},
+    .preinit = \hyperlink{homescreen_8cpp_ab3b1914acb53dcc038c1cf86c2975785}{preinit},
+    .init = \hyperlink{homescreen_8cpp_a5d7de3437d5dcb79fa035959d95878db}{init},
+    .onevent = \hyperlink{homescreen_8cpp_a60665935681c76d38b3833912109cdd3}{onevent}
+\}
+\end{DoxyCode}
+
+
+Definition at line 394 of file homescreen.\+cpp.
+
+\index{homescreen.\+cpp@{homescreen.\+cpp}!g\+\_\+client\+\_\+manager@{g\+\_\+client\+\_\+manager}}
+\index{g\+\_\+client\+\_\+manager@{g\+\_\+client\+\_\+manager}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{g\+\_\+client\+\_\+manager}{g_client_manager}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\+S\+\_\+\+Client\+Manager}$\ast$ g\+\_\+client\+\_\+manager = {\bf H\+S\+\_\+\+Client\+Manager\+::instance}()\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_a501f5bca8425de3171d46e0723f466ec}{}\label{homescreen_8cpp_a501f5bca8425de3171d46e0723f466ec}
+
+
+Definition at line 32 of file homescreen.\+cpp.
+
+\index{homescreen.\+cpp@{homescreen.\+cpp}!verbs@{verbs}}
+\index{verbs@{verbs}!homescreen.\+cpp@{homescreen.\+cpp}}
+\subsubsection[{\texorpdfstring{verbs}{verbs}}]{\setlength{\rightskip}{0pt plus 5cm}const afb\+\_\+verb\+\_\+t verbs\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{homescreen_8cpp_a01e06b6317acebc1d5686386b15f0872}{}\label{homescreen_8cpp_a01e06b6317acebc1d5686386b15f0872}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    
+    \{ .verb=\textcolor{stringliteral}{"ping"},              .callback=\hyperlink{homescreen_8cpp_ace65cfe6008848a3cd66581f536cc4c9}{pingSample}             \},
+    \{ .verb=\textcolor{stringliteral}{"tap\_shortcut"},      .callback=\hyperlink{homescreen_8cpp_ab8abb667377924d5c073611738febbd3}{tap\_shortcut}           \},
+    \{ .verb=\textcolor{stringliteral}{"showWindow"},        .callback=\hyperlink{homescreen_8cpp_ae475c69e7ca2a539ae0fb40a82963ac1}{showWindow}             \},
+    \{ .verb=\textcolor{stringliteral}{"hideWindow"},        .callback=\hyperlink{homescreen_8cpp_a057c380ea38cfba4e2fbccc40fc21798}{hideWindow}             \},
+    \{ .verb=\textcolor{stringliteral}{"replyShowWindow"},   .callback=\hyperlink{homescreen_8cpp_a710bcc84a61e11dbd4517def2764ff95}{replyShowWindow}        \},
+    \{ .verb=\textcolor{stringliteral}{"on\_screen\_message"}, .callback=\hyperlink{homescreen_8cpp_a0df2b60ff6cd56b53dc87b36bfee2b91}{on\_screen\_message}      \},
+    \{ .verb=\textcolor{stringliteral}{"on\_screen\_reply"},   .callback=\hyperlink{homescreen_8cpp_a7443596f6ddf459824ecd8138c681532}{on\_screen\_reply}        \},
+    \{ .verb=\textcolor{stringliteral}{"subscribe"},         .callback=\hyperlink{homescreen_8cpp_a6e942ab2b7207d2aef9adce71a4574e8}{subscribe}              \},
+    \{ .verb=\textcolor{stringliteral}{"unsubscribe"},       .callback=\hyperlink{homescreen_8cpp_a3b162ab1856a8fa4284cb2c5c35ea748}{unsubscribe}            \},
+    \{ .verb=\textcolor{stringliteral}{"showNotification"},  .callback=\hyperlink{homescreen_8cpp_ad96a84455e8676abb4486e48ef67b1ad}{showNotification}       \},
+    \{ .verb=\textcolor{stringliteral}{"showInformation"},   .callback=\hyperlink{homescreen_8cpp_a916c8dd31373222ee2b6ef89aca91978}{showInformation}        \},
+    \{NULL \} 
+\}
+\end{DoxyCode}
+
+
+Definition at line 326 of file homescreen.\+cpp.
+

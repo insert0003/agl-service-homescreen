@@ -1,0 +1,579 @@
+\hypertarget{class_h_s___client}{}\section{H\+S\+\_\+\+Client Class Reference}
+\label{class_h_s___client}\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+
+
+{\ttfamily \#include $<$hs-\/client.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_h_s___client_a0afac6b86b9a72e74846e47e435f5f90}{H\+S\+\_\+\+Client} (afb\+\_\+req\+\_\+t request, const char $\ast$id)
+\item 
+\hyperlink{class_h_s___client_a47cb0035116ac7be4fffcfc9736e9233}{H\+S\+\_\+\+Client} (afb\+\_\+req\+\_\+t request, std\+::string id)
+\item 
+\hyperlink{class_h_s___client_a429a4697767344f3789bb233bc73a2b9}{H\+S\+\_\+\+Client} (\hyperlink{class_h_s___client}{H\+S\+\_\+\+Client} \&)=delete
+\item 
+\hyperlink{class_h_s___client}{H\+S\+\_\+\+Client} \& \hyperlink{class_h_s___client_a3e3d8fa1c8746d6d1b1650fe1fcc56a8}{operator=} (\hyperlink{class_h_s___client}{H\+S\+\_\+\+Client} \&)=delete
+\item 
+\hyperlink{class_h_s___client_ab29a9e899aaec3c21983c24ec6e5ee70}{$\sim$\+H\+S\+\_\+\+Client} ()
+\item 
+int \hyperlink{class_h_s___client_a0d7fb8316248e8946dcb73a6612f21bb}{tap\+\_\+shortcut} (const char $\ast$appid)
+\item 
+int \hyperlink{class_h_s___client_af0f2be967a5b6ee81932c73b101184f7}{show\+Window} (afb\+\_\+req\+\_\+t request, const char $\ast$appid)
+\item 
+int \hyperlink{class_h_s___client_ac29482ffdf1b27733247ba0ffcc28b76}{hide\+Window} (afb\+\_\+req\+\_\+t request)
+\item 
+int \hyperlink{class_h_s___client_a294e461500ef02aed17ed5d91479f6b9}{reply\+Show\+Window} (afb\+\_\+req\+\_\+t request, const char $\ast$appid)
+\item 
+int \hyperlink{class_h_s___client_a274301617c9ab629d6916c0dde8c40b9}{on\+\_\+screen\+\_\+message} (afb\+\_\+req\+\_\+t request, const char $\ast$message)
+\item 
+int \hyperlink{class_h_s___client_a9f7a30840c95b1348bcce4cd4626b2ae}{on\+\_\+screen\+\_\+reply} (afb\+\_\+req\+\_\+t request, const char $\ast$message)
+\item 
+int \hyperlink{class_h_s___client_a3d000ca70bd4a8af7c4895d95bc7d0d0}{subscribe} (afb\+\_\+req\+\_\+t request, const char $\ast$event)
+\item 
+int \hyperlink{class_h_s___client_a3da3b5662f918e11773da75f8f971d9c}{unsubscribe} (afb\+\_\+req\+\_\+t request, const char $\ast$event)
+\item 
+int \hyperlink{class_h_s___client_a77b41c1bc6f2c939410108d821a0b456}{show\+Notification} (afb\+\_\+req\+\_\+t request)
+\item 
+int \hyperlink{class_h_s___client_a7145c14a7a971b45f647a82e3390ce9c}{show\+Information} (afb\+\_\+req\+\_\+t request)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 25 of file hs-\/client.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\subsubsection[{\texorpdfstring{H\+S\+\_\+\+Client(afb\+\_\+req\+\_\+t request, const char $\ast$id)}{HS_Client(afb_req_t request, const char *id)}}]{\setlength{\rightskip}{0pt plus 5cm}H\+S\+\_\+\+Client\+::\+H\+S\+\_\+\+Client (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request, }
+\item[{const char $\ast$}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_h_s___client_a0afac6b86b9a72e74846e47e435f5f90}{}\label{class_h_s___client_a0afac6b86b9a72e74846e47e435f5f90}
+
+
+Definition at line 27 of file hs-\/client.\+h.
+
+
+\begin{DoxyCode}
+27 : \hyperlink{class_h_s___client_a0afac6b86b9a72e74846e47e435f5f90}{HS\_Client}(request, std::string(\textcolor{keywordtype}{id}))\{\}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\subsubsection[{\texorpdfstring{H\+S\+\_\+\+Client(afb\+\_\+req\+\_\+t request, std\+::string id)}{HS_Client(afb_req_t request, std::string id)}}]{\setlength{\rightskip}{0pt plus 5cm}H\+S\+\_\+\+Client\+::\+H\+S\+\_\+\+Client (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request, }
+\item[{std\+::string}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_a47cb0035116ac7be4fffcfc9736e9233}{}\label{class_h_s___client_a47cb0035116ac7be4fffcfc9736e9233}
+\hyperlink{class_h_s___client}{H\+S\+\_\+\+Client} construction function
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item id\+: app\textquotesingle{}s id
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 38 of file hs-\/client.\+cpp.
+
+
+\begin{DoxyCode}
+38                                                     : my\_id(\textcolor{keywordtype}{id})
+39 \{
+40     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"called."});
+41     my\_event = afb\_api\_make\_event(request->api, \textcolor{keywordtype}{id}.c\_str());
+42 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\subsubsection[{\texorpdfstring{H\+S\+\_\+\+Client(\+H\+S\+\_\+\+Client \&)=delete}{HS_Client(HS_Client &)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}H\+S\+\_\+\+Client\+::\+H\+S\+\_\+\+Client (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+S\+\_\+\+Client} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{class_h_s___client_a429a4697767344f3789bb233bc73a2b9}{}\label{class_h_s___client_a429a4697767344f3789bb233bc73a2b9}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!````~H\+S\+\_\+\+Client@{$\sim$\+H\+S\+\_\+\+Client}}
+\index{````~H\+S\+\_\+\+Client@{$\sim$\+H\+S\+\_\+\+Client}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\subsubsection[{\texorpdfstring{$\sim$\+H\+S\+\_\+\+Client()}{~HS_Client()}}]{\setlength{\rightskip}{0pt plus 5cm}H\+S\+\_\+\+Client\+::$\sim$\+H\+S\+\_\+\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_ab29a9e899aaec3c21983c24ec6e5ee70}{}\label{class_h_s___client_ab29a9e899aaec3c21983c24ec6e5ee70}
+\hyperlink{class_h_s___client}{H\+S\+\_\+\+Client} destruction function
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item null
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 54 of file hs-\/client.\+cpp.
+
+
+\begin{DoxyCode}
+55 \{
+56     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"called."});
+57     afb\_event\_unref(my\_event);
+58 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!hide\+Window@{hide\+Window}}
+\index{hide\+Window@{hide\+Window}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\subsubsection[{\texorpdfstring{hide\+Window(afb\+\_\+req\+\_\+t request)}{hideWindow(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+::hide\+Window (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_ac29482ffdf1b27733247ba0ffcc28b76}{}\label{class_h_s___client_ac29482ffdf1b27733247ba0ffcc28b76}
+hide\+Window event
+
+input contents \+: \{\char`\"{}application\+\_\+id\char`\"{}\+:\char`\"{}the appid that want to hide\char`\"{}\}
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: the request
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+0 \+: success others \+: fail 
+
+Definition at line 245 of file hs-\/client.\+cpp.
+
+
+\begin{DoxyCode}
+246 \{
+247     \textcolor{keywordflow}{if}(!checkEvent(\_\_FUNCTION\_\_))
+248         \textcolor{keywordflow}{return} 0;
+249 
+250     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"%s application\_id = %s."}, \_\_FUNCTION\_\_);
+251     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* req\_appid = afb\_req\_get\_application\_id(request);
+252     \textcolor{keyword}{struct }json\_object* push\_obj = json\_object\_new\_object();
+253     \hyperlink{hs-helper_8cpp_a8777c53f1d4d5412f19b134ad85ffedf}{hs\_add\_object\_to\_json\_object\_str}( push\_obj, 4, 
+      \hyperlink{homescreen_8cpp_a6a0e1db2562b442f8131ddf64b61d1ba}{\_application\_id}, req\_appid,
+254     \hyperlink{hs-client_8cpp_a1c24b43242df87f75631175c75afdcda}{\_type}, \_\_FUNCTION\_\_);
+255     afb\_event\_push(my\_event, push\_obj);
+256     \textcolor{keywordflow}{return} 0;
+257 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!on\+\_\+screen\+\_\+message@{on\+\_\+screen\+\_\+message}}
+\index{on\+\_\+screen\+\_\+message@{on\+\_\+screen\+\_\+message}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\subsubsection[{\texorpdfstring{on\+\_\+screen\+\_\+message(afb\+\_\+req\+\_\+t request, const char $\ast$message)}{on_screen_message(afb_req_t request, const char *message)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+::on\+\_\+screen\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request, }
+\item[{const char $\ast$}]{message}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_a274301617c9ab629d6916c0dde8c40b9}{}\label{class_h_s___client_a274301617c9ab629d6916c0dde8c40b9}
+push on\+\_\+screen\+\_\+message event
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item message\+: post message.
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+result 
+
+Definition at line 93 of file hs-\/client.\+cpp.
+
+
+\begin{DoxyCode}
+94 \{
+95     \textcolor{keywordflow}{if}(!checkEvent(\_\_FUNCTION\_\_))
+96         \textcolor{keywordflow}{return} 0;
+97 
+98     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"push %s event message [%s]."}, \_\_FUNCTION\_\_, message);
+99     \textcolor{keyword}{struct }json\_object* push\_obj = json\_object\_new\_object();
+100     \hyperlink{hs-helper_8cpp_a8777c53f1d4d5412f19b134ad85ffedf}{hs\_add\_object\_to\_json\_object\_str}( push\_obj, 4, 
+      \hyperlink{homescreen_8cpp_abfd6c1d6f316fa952b11553f8f275e92}{\_display\_message}, message,
+101     \hyperlink{hs-client_8cpp_a1c24b43242df87f75631175c75afdcda}{\_type}, \_\_FUNCTION\_\_);
+102     afb\_event\_push(my\_event, push\_obj);
+103     \textcolor{keywordflow}{return} 0;
+104 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!on\+\_\+screen\+\_\+reply@{on\+\_\+screen\+\_\+reply}}
+\index{on\+\_\+screen\+\_\+reply@{on\+\_\+screen\+\_\+reply}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\subsubsection[{\texorpdfstring{on\+\_\+screen\+\_\+reply(afb\+\_\+req\+\_\+t request, const char $\ast$message)}{on_screen_reply(afb_req_t request, const char *message)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+::on\+\_\+screen\+\_\+reply (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request, }
+\item[{const char $\ast$}]{message}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_a9f7a30840c95b1348bcce4cd4626b2ae}{}\label{class_h_s___client_a9f7a30840c95b1348bcce4cd4626b2ae}
+push on\+\_\+screen\+\_\+reply event
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item message\+: reply message.
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+result 
+
+Definition at line 116 of file hs-\/client.\+cpp.
+
+
+\begin{DoxyCode}
+117 \{
+118     \textcolor{keywordflow}{if}(!checkEvent(\_\_FUNCTION\_\_))
+119         \textcolor{keywordflow}{return} 0;
+120 
+121     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"push %s event message [%s]."}, \_\_FUNCTION\_\_, message);
+122     \textcolor{keyword}{struct }json\_object* push\_obj = json\_object\_new\_object();
+123     \hyperlink{hs-helper_8cpp_a8777c53f1d4d5412f19b134ad85ffedf}{hs\_add\_object\_to\_json\_object\_str}( push\_obj, 4, 
+      \hyperlink{homescreen_8cpp_a79b0f0b481161527ccb80e83da143219}{\_reply\_message}, message,
+124     \hyperlink{hs-client_8cpp_a1c24b43242df87f75631175c75afdcda}{\_type}, \_\_FUNCTION\_\_);
+125     afb\_event\_push(my\_event, push\_obj);
+126     \textcolor{keywordflow}{return} 0;
+127 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!operator=@{operator=}}
+\index{operator=@{operator=}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\subsubsection[{\texorpdfstring{operator=(\+H\+S\+\_\+\+Client \&)=delete}{operator=(HS_Client &)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\+S\+\_\+\+Client}\& H\+S\+\_\+\+Client\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+S\+\_\+\+Client} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{class_h_s___client_a3e3d8fa1c8746d6d1b1650fe1fcc56a8}{}\label{class_h_s___client_a3e3d8fa1c8746d6d1b1650fe1fcc56a8}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!reply\+Show\+Window@{reply\+Show\+Window}}
+\index{reply\+Show\+Window@{reply\+Show\+Window}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\subsubsection[{\texorpdfstring{reply\+Show\+Window(afb\+\_\+req\+\_\+t request, const char $\ast$appid)}{replyShowWindow(afb_req_t request, const char *appid)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+::reply\+Show\+Window (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request, }
+\item[{const char $\ast$}]{appid}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_a294e461500ef02aed17ed5d91479f6b9}{}\label{class_h_s___client_a294e461500ef02aed17ed5d91479f6b9}
+reply\+Show\+Window event
+
+input contens \+: \{\char`\"{}application\+\_\+id\char`\"{}\+: \char`\"{}the appid that want to reply\char`\"{}, \char`\"{}parameter\char`\"{}\+: \{...\}\}
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: the request
+\item appid \+: the appid that want to reply
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+0 \+: success others \+: fail 
+
+Definition at line 273 of file hs-\/client.\+cpp.
+
+
+\begin{DoxyCode}
+274 \{
+275     \textcolor{keywordflow}{if}(!checkEvent(\_\_FUNCTION\_\_))
+276         \textcolor{keywordflow}{return} 0;
+277 
+278     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"%s application\_id = %s."}, \_\_FUNCTION\_\_, appid);
+279     \textcolor{keyword}{struct }json\_object* push\_obj = json\_object\_new\_object();
+280     \hyperlink{hs-helper_8cpp_a8777c53f1d4d5412f19b134ad85ffedf}{hs\_add\_object\_to\_json\_object\_str}( push\_obj, 4, 
+      \hyperlink{homescreen_8cpp_a6a0e1db2562b442f8131ddf64b61d1ba}{\_application\_id}, appid, \hyperlink{hs-client_8cpp_a1c24b43242df87f75631175c75afdcda}{\_type}, \_\_FUNCTION\_\_);
+281     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* param = afb\_req\_value(request, \hyperlink{hs-client_8cpp_ae3fc16098a2461f2f1ae0ac8561437c6}{\_parameter});
+282     \textcolor{keywordflow}{if}(param) \{
+283         json\_object\_object\_add(push\_obj, \hyperlink{hs-client_8cpp_ae3fc16098a2461f2f1ae0ac8561437c6}{\_parameter}, json\_tokener\_parse(param));
+284     \}
+285     \textcolor{keywordflow}{else} \{
+286         \hyperlink{include_2hmi-debug_8h_a65bb6c7cfe38f8a724beab5059d36fb2}{HMI\_ERROR}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"please input correct parameter."});
+287         \textcolor{keywordflow}{return} \hyperlink{hs-helper_8h_aa611e2ec24ef295bd87825889fe2ce5e}{AFB\_EVENT\_BAD\_REQUEST};
+288     \}
+289 
+290     afb\_event\_push(my\_event, push\_obj);
+291     \textcolor{keywordflow}{return} 0;
+292 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!show\+Information@{show\+Information}}
+\index{show\+Information@{show\+Information}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\subsubsection[{\texorpdfstring{show\+Information(afb\+\_\+req\+\_\+t request)}{showInformation(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+::show\+Information (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_a7145c14a7a971b45f647a82e3390ce9c}{}\label{class_h_s___client_a7145c14a7a971b45f647a82e3390ce9c}
+show\+Information event
+
+input contents \+: \{\char`\"{}info\char`\"{}\+: \char`\"{}information contents\char`\"{}\}
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: the request
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+0 \+: success others \+: fail 
+
+Definition at line 350 of file hs-\/client.\+cpp.
+
+
+\begin{DoxyCode}
+351 \{
+352     \textcolor{keywordtype}{int} ret = 0;
+353     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *value = afb\_req\_value(request, \hyperlink{hs-client_8cpp_ae125cd80cb98582684636e46ecf33cac}{\_info});
+354     \textcolor{keywordflow}{if}(value) \{
+355         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"info is %s"}, value);
+356         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* appid = afb\_req\_get\_application\_id(request);
+357         \textcolor{keyword}{struct }json\_object* param\_obj = json\_object\_new\_object();
+358         json\_object\_object\_add(param\_obj, \hyperlink{hs-client_8cpp_ae125cd80cb98582684636e46ecf33cac}{\_info}, json\_object\_new\_string(value));
+359         \textcolor{keyword}{struct }json\_object* push\_obj = json\_object\_new\_object();
+360         \hyperlink{hs-helper_8cpp_a8777c53f1d4d5412f19b134ad85ffedf}{hs\_add\_object\_to\_json\_object\_str}( push\_obj, 4, 
+      \hyperlink{homescreen_8cpp_a6a0e1db2562b442f8131ddf64b61d1ba}{\_application\_id}, appid, \hyperlink{hs-client_8cpp_a1c24b43242df87f75631175c75afdcda}{\_type}, \_\_FUNCTION\_\_);
+361         json\_object\_object\_add(push\_obj, \hyperlink{hs-client_8cpp_ae3fc16098a2461f2f1ae0ac8561437c6}{\_parameter}, param\_obj);
+362         afb\_event\_push(my\_event, push\_obj);
+363     \}
+364     \textcolor{keywordflow}{else} \{
+365         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"please input information."});
+366         ret = \hyperlink{hs-helper_8h_aefe0d7ff8202f954693c235c1fb8e310}{AFB\_REQ\_SHOWINFORMATION\_ERROR};
+367     \}
+368 
+369     \textcolor{keywordflow}{return} ret;
+370 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!show\+Notification@{show\+Notification}}
+\index{show\+Notification@{show\+Notification}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\subsubsection[{\texorpdfstring{show\+Notification(afb\+\_\+req\+\_\+t request)}{showNotification(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+::show\+Notification (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_a77b41c1bc6f2c939410108d821a0b456}{}\label{class_h_s___client_a77b41c1bc6f2c939410108d821a0b456}
+show\+Notification event
+
+input contents \+: \{\char`\"{}icon\char`\"{}\+: \char`\"{}icon path\char`\"{}, \char`\"{}text\char`\"{}\+: \char`\"{}message contents\char`\"{}\}
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: the request
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+0 \+: success others \+: fail 
+
+Definition at line 307 of file hs-\/client.\+cpp.
+
+
+\begin{DoxyCode}
+308 \{
+309     \textcolor{keywordtype}{int} ret = 0;
+310     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *value = afb\_req\_value(request, \hyperlink{hs-client_8cpp_ad177811d47939fe9404de88672a980ab}{\_text});
+311     \textcolor{keywordflow}{if}(value) \{
+312         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"text is %s"}, value);
+313         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* appid = afb\_req\_get\_application\_id(request);
+314         \textcolor{keyword}{struct }json\_object* param\_obj = json\_object\_new\_object();
+315         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *icon = afb\_req\_value(request, \hyperlink{hs-client_8cpp_a5476c8a51997c773220bec9fc02eeaf5}{\_icon});
+316         \textcolor{keywordflow}{if}(icon) \{
+317             json\_object\_object\_add(param\_obj, \hyperlink{hs-client_8cpp_a5476c8a51997c773220bec9fc02eeaf5}{\_icon}, json\_object\_new\_string(icon));
+318             json\_object\_object\_add(param\_obj, \hyperlink{hs-client_8cpp_ad177811d47939fe9404de88672a980ab}{\_text}, json\_object\_new\_string(value));
+319             \textcolor{keyword}{struct }json\_object* push\_obj = json\_object\_new\_object();
+320             \hyperlink{hs-helper_8cpp_a8777c53f1d4d5412f19b134ad85ffedf}{hs\_add\_object\_to\_json\_object\_str}( push\_obj, 4, 
+      \hyperlink{homescreen_8cpp_a6a0e1db2562b442f8131ddf64b61d1ba}{\_application\_id}, appid, \hyperlink{hs-client_8cpp_a1c24b43242df87f75631175c75afdcda}{\_type}, \_\_FUNCTION\_\_);
+321             json\_object\_object\_add(push\_obj, \hyperlink{hs-client_8cpp_ae3fc16098a2461f2f1ae0ac8561437c6}{\_parameter}, param\_obj);
+322             afb\_event\_push(my\_event, push\_obj);
+323         \}
+324         \textcolor{keywordflow}{else} \{
+325             \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"please input icon."});
+326             ret = \hyperlink{hs-helper_8h_a057fc88b8445828c261305cf9107d99d}{AFB\_REQ\_SHOWNOTIFICATION\_ERROR};
+327         \}
+328     \}
+329     \textcolor{keywordflow}{else} \{
+330         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"please input text."});
+331         ret = \hyperlink{hs-helper_8h_a057fc88b8445828c261305cf9107d99d}{AFB\_REQ\_SHOWNOTIFICATION\_ERROR};
+332     \}
+333 
+334     \textcolor{keywordflow}{return} ret;
+335 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!show\+Window@{show\+Window}}
+\index{show\+Window@{show\+Window}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\subsubsection[{\texorpdfstring{show\+Window(afb\+\_\+req\+\_\+t request, const char $\ast$appid)}{showWindow(afb_req_t request, const char *appid)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+::show\+Window (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request, }
+\item[{const char $\ast$}]{appid}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_af0f2be967a5b6ee81932c73b101184f7}{}\label{class_h_s___client_af0f2be967a5b6ee81932c73b101184f7}
+show\+Window event
+
+input contents \+: \{\char`\"{}application\+\_\+id\char`\"{}\+:\char`\"{}the appid that want to display\char`\"{}, \char`\"{}parameter\char`\"{}\+:\{\char`\"{}area\char`\"{}\+: \char`\"{}display area\char`\"{}, ...\}\}
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: the request
+\item appid \+: the appid that want to display
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+0 \+: success others \+: fail 
+
+Definition at line 209 of file hs-\/client.\+cpp.
+
+
+\begin{DoxyCode}
+210 \{
+211     \textcolor{keywordflow}{if}(!checkEvent(\_\_FUNCTION\_\_))
+212         \textcolor{keywordflow}{return} 0;
+213 
+214     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"%s application\_id = %s."}, \_\_FUNCTION\_\_, appid);
+215     \textcolor{keyword}{struct }json\_object* push\_obj = json\_object\_new\_object();
+216     \hyperlink{hs-helper_8cpp_a8777c53f1d4d5412f19b134ad85ffedf}{hs\_add\_object\_to\_json\_object\_str}( push\_obj, 4, 
+      \hyperlink{homescreen_8cpp_a6a0e1db2562b442f8131ddf64b61d1ba}{\_application\_id}, appid, \hyperlink{hs-client_8cpp_a1c24b43242df87f75631175c75afdcda}{\_type}, \_\_FUNCTION\_\_);
+217     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* param = afb\_req\_value(request, \hyperlink{hs-client_8cpp_ae3fc16098a2461f2f1ae0ac8561437c6}{\_parameter});
+218     \textcolor{keywordflow}{if}(param) \{
+219         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* req\_appid = afb\_req\_get\_application\_id(request);
+220         \textcolor{keyword}{struct }json\_object* param\_obj = json\_tokener\_parse(param);
+221         json\_object\_object\_add(param\_obj, \hyperlink{hs-client_8cpp_ac5b722c0d87d2b0e3dfc527b44a1f5db}{\_replyto}, json\_object\_new\_string(req\_appid));
+222         json\_object\_object\_add(push\_obj, \hyperlink{hs-client_8cpp_ae3fc16098a2461f2f1ae0ac8561437c6}{\_parameter}, param\_obj);
+223     \}
+224     \textcolor{keywordflow}{else} \{
+225         \hyperlink{include_2hmi-debug_8h_a65bb6c7cfe38f8a724beab5059d36fb2}{HMI\_ERROR}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"please input correct parameter."});
+226         \textcolor{keywordflow}{return} \hyperlink{hs-helper_8h_aa611e2ec24ef295bd87825889fe2ce5e}{AFB\_EVENT\_BAD\_REQUEST};
+227     \}
+228     afb\_event\_push(my\_event, push\_obj);
+229     \textcolor{keywordflow}{return} 0;
+230 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\subsubsection[{\texorpdfstring{subscribe(afb\+\_\+req\+\_\+t request, const char $\ast$event)}{subscribe(afb_req_t request, const char *event)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+::subscribe (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request, }
+\item[{const char $\ast$}]{event}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_a3d000ca70bd4a8af7c4895d95bc7d0d0}{}\label{class_h_s___client_a3d000ca70bd4a8af7c4895d95bc7d0d0}
+subscribe event
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item event\+: homescreen event, tap\+\_\+shortcut etc.
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+result 
+
+Definition at line 139 of file hs-\/client.\+cpp.
+
+
+\begin{DoxyCode}
+140 \{
+141     \textcolor{keywordtype}{int} ret = 0;
+142     \textcolor{keyword}{auto} ip = event\_list.find(std::string(event));
+143     \textcolor{keywordflow}{if}(ip == event\_list.end()) \{
+144         event\_list[std::string(event)] = 0;
+145     \}
+146     \textcolor{keywordflow}{if}(!subscription) \{
+147         ret = afb\_req\_subscribe(request, my\_event);
+148         \textcolor{keywordflow}{if}(ret == 0) \{
+149             subscription = \textcolor{keyword}{true};
+150         \}
+151     \}
+152     \textcolor{keywordflow}{return} ret;
+153 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!tap\+\_\+shortcut@{tap\+\_\+shortcut}}
+\index{tap\+\_\+shortcut@{tap\+\_\+shortcut}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\subsubsection[{\texorpdfstring{tap\+\_\+shortcut(const char $\ast$appid)}{tap_shortcut(const char *appid)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+::tap\+\_\+shortcut (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{appid}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_a0d7fb8316248e8946dcb73a6612f21bb}{}\label{class_h_s___client_a0d7fb8316248e8946dcb73a6612f21bb}
+push tap\+\_\+shortcut event
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item appid\+: app\textquotesingle{}s id.
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+result 
+
+Definition at line 70 of file hs-\/client.\+cpp.
+
+
+\begin{DoxyCode}
+71 \{
+72     \textcolor{keywordflow}{if}(!checkEvent(\_\_FUNCTION\_\_))
+73         \textcolor{keywordflow}{return} 0;
+74 
+75     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"%s application\_id = %s."}, \_\_FUNCTION\_\_, appid);
+76     \textcolor{keyword}{struct }json\_object* push\_obj = json\_object\_new\_object();
+77     \hyperlink{hs-helper_8cpp_a8777c53f1d4d5412f19b134ad85ffedf}{hs\_add\_object\_to\_json\_object\_str}( push\_obj, 4, 
+      \hyperlink{homescreen_8cpp_a6a0e1db2562b442f8131ddf64b61d1ba}{\_application\_id}, appid,
+78     \hyperlink{hs-client_8cpp_a1c24b43242df87f75631175c75afdcda}{\_type}, \_\_FUNCTION\_\_);
+79     afb\_event\_push(my\_event, push\_obj);
+80     \textcolor{keywordflow}{return} 0;
+81 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}!unsubscribe@{unsubscribe}}
+\index{unsubscribe@{unsubscribe}!H\+S\+\_\+\+Client@{H\+S\+\_\+\+Client}}
+\subsubsection[{\texorpdfstring{unsubscribe(afb\+\_\+req\+\_\+t request, const char $\ast$event)}{unsubscribe(afb_req_t request, const char *event)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+::unsubscribe (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request, }
+\item[{const char $\ast$}]{event}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_a3da3b5662f918e11773da75f8f971d9c}{}\label{class_h_s___client_a3da3b5662f918e11773da75f8f971d9c}
+unsubscribe event
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item event\+: homescreen event, tap\+\_\+shortcut etc.
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+result 
+
+Definition at line 165 of file hs-\/client.\+cpp.
+
+
+\begin{DoxyCode}
+166 \{
+167     \textcolor{keywordtype}{int} ret = 0;
+168     event\_list.erase(std::string(event));
+169     \textcolor{keywordflow}{if}(event\_list.empty()) \{
+170         ret = afb\_req\_unsubscribe(request, my\_event);
+171     \}
+172     \textcolor{keywordflow}{return} ret;
+173 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{hs-client_8h}{hs-\/client.\+h}\item 
+src/\hyperlink{hs-client_8cpp}{hs-\/client.\+cpp}\end{DoxyCompactItemize}

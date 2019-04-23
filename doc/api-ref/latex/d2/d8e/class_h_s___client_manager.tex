@@ -1,0 +1,657 @@
+\hypertarget{class_h_s___client_manager}{}\section{H\+S\+\_\+\+Client\+Manager Class Reference}
+\label{class_h_s___client_manager}\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+
+
+{\ttfamily \#include $<$hs-\/clientmanager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_h_s___client_manager_adac35e476e559cc89bc39363525268bf}{H\+S\+\_\+\+Client\+Manager} ()
+\item 
+\hyperlink{class_h_s___client_manager_a50733274a93293fef892fdd453d74cae}{$\sim$\+H\+S\+\_\+\+Client\+Manager} ()=default
+\item 
+\hyperlink{class_h_s___client_manager_a0033db6b552f9de818789e76735c1ebc}{H\+S\+\_\+\+Client\+Manager} (\hyperlink{class_h_s___client_manager}{H\+S\+\_\+\+Client\+Manager} const \&)=delete
+\item 
+\hyperlink{class_h_s___client_manager}{H\+S\+\_\+\+Client\+Manager} \& \hyperlink{class_h_s___client_manager_ac8e02cffc79d4530b06e1143abb18891}{operator=} (\hyperlink{class_h_s___client_manager}{H\+S\+\_\+\+Client\+Manager} const \&)=delete
+\item 
+\hyperlink{class_h_s___client_manager_a715811c549cccd93cb1f903d179c8b41}{H\+S\+\_\+\+Client\+Manager} (\hyperlink{class_h_s___client_manager}{H\+S\+\_\+\+Client\+Manager} \&\&)=delete
+\item 
+\hyperlink{class_h_s___client_manager}{H\+S\+\_\+\+Client\+Manager} \& \hyperlink{class_h_s___client_manager_a49e225bb8421c812ac016309d54a00fa}{operator=} (\hyperlink{class_h_s___client_manager}{H\+S\+\_\+\+Client\+Manager} \&\&)=delete
+\item 
+int \hyperlink{class_h_s___client_manager_ae0b9b18adeffca7822b060ad4ea8a7a1}{init} (void)
+\item 
+void \hyperlink{class_h_s___client_manager_adc23f8b3f5cc06eeab39fb24098af3e2}{remove\+Client\+Ctxt} (void $\ast$data)
+\item 
+int \hyperlink{class_h_s___client_manager_a9910fc27c412530b5b9854b00bd16c07}{tap\+\_\+shortcut} (afb\+\_\+req\+\_\+t request)
+\item 
+int \hyperlink{class_h_s___client_manager_afed8158f276d1d22c32b0d89e970d442}{show\+Window} (afb\+\_\+req\+\_\+t request)
+\item 
+int \hyperlink{class_h_s___client_manager_a6195694d281a3b97b0345b96c0add1fd}{hide\+Window} (afb\+\_\+req\+\_\+t request)
+\item 
+int \hyperlink{class_h_s___client_manager_a59b1c1e115b5a257a585c41f854f5fdd}{reply\+Show\+Window} (afb\+\_\+req\+\_\+t request)
+\item 
+int \hyperlink{class_h_s___client_manager_a58ce4a013d3694265dd69f481bf88510}{on\+\_\+screen\+\_\+message} (afb\+\_\+req\+\_\+t request)
+\item 
+int \hyperlink{class_h_s___client_manager_aa78f992287e3b8fe93422b331dc9edc5}{on\+\_\+screen\+\_\+reply} (afb\+\_\+req\+\_\+t request)
+\item 
+int \hyperlink{class_h_s___client_manager_a1b8a4e42342c4bcdc4e7dc4934e02469}{subscribe} (afb\+\_\+req\+\_\+t request)
+\item 
+int \hyperlink{class_h_s___client_manager_ac86314afbb90116e2f02ce071166226e}{unsubscribe} (afb\+\_\+req\+\_\+t request)
+\item 
+int \hyperlink{class_h_s___client_manager_a857934af280081ca6ac61d9f2cac37c5}{show\+Notification} (afb\+\_\+req\+\_\+t request)
+\item 
+int \hyperlink{class_h_s___client_manager_a0645294f89c67fd3c9b0cce62a900f69}{show\+Information} (afb\+\_\+req\+\_\+t request)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_h_s___client_manager}{H\+S\+\_\+\+Client\+Manager} $\ast$ \hyperlink{class_h_s___client_manager_ad86c1fea7d107d52cbf0466fb7a2658b}{instance} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 37 of file hs-\/clientmanager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{H\+S\+\_\+\+Client\+Manager()}{HS_ClientManager()}}]{\setlength{\rightskip}{0pt plus 5cm}H\+S\+\_\+\+Client\+Manager\+::\+H\+S\+\_\+\+Client\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_manager_adac35e476e559cc89bc39363525268bf}{}\label{class_h_s___client_manager_adac35e476e559cc89bc39363525268bf}
+\hyperlink{class_h_s___client_manager}{H\+S\+\_\+\+Client\+Manager} construction function
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item Nothing
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 39 of file hs-\/clientmanager.\+cpp.
+
+
+\begin{DoxyCode}
+40 \{
+41 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!````~H\+S\+\_\+\+Client\+Manager@{$\sim$\+H\+S\+\_\+\+Client\+Manager}}
+\index{````~H\+S\+\_\+\+Client\+Manager@{$\sim$\+H\+S\+\_\+\+Client\+Manager}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{$\sim$\+H\+S\+\_\+\+Client\+Manager()=default}{~HS_ClientManager()=default}}]{\setlength{\rightskip}{0pt plus 5cm}H\+S\+\_\+\+Client\+Manager\+::$\sim$\+H\+S\+\_\+\+Client\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{class_h_s___client_manager_a50733274a93293fef892fdd453d74cae}{}\label{class_h_s___client_manager_a50733274a93293fef892fdd453d74cae}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{H\+S\+\_\+\+Client\+Manager(\+H\+S\+\_\+\+Client\+Manager const \&)=delete}{HS_ClientManager(HS_ClientManager const &)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}H\+S\+\_\+\+Client\+Manager\+::\+H\+S\+\_\+\+Client\+Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+S\+\_\+\+Client\+Manager} const \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{class_h_s___client_manager_a0033db6b552f9de818789e76735c1ebc}{}\label{class_h_s___client_manager_a0033db6b552f9de818789e76735c1ebc}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{H\+S\+\_\+\+Client\+Manager(\+H\+S\+\_\+\+Client\+Manager \&\&)=delete}{HS_ClientManager(HS_ClientManager &&)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}H\+S\+\_\+\+Client\+Manager\+::\+H\+S\+\_\+\+Client\+Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+S\+\_\+\+Client\+Manager} \&\&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{class_h_s___client_manager_a715811c549cccd93cb1f903d179c8b41}{}\label{class_h_s___client_manager_a715811c549cccd93cb1f903d179c8b41}
+
+
+\subsection{Member Function Documentation}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!hide\+Window@{hide\+Window}}
+\index{hide\+Window@{hide\+Window}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{hide\+Window(afb\+\_\+req\+\_\+t request)}{hideWindow(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+Manager\+::hide\+Window (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_manager_a6195694d281a3b97b0345b96c0add1fd}{}\label{class_h_s___client_manager_a6195694d281a3b97b0345b96c0add1fd}
+hide\+Window event
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: the request
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+0 \+: success others \+: fail 
+
+Definition at line 356 of file hs-\/clientmanager.\+cpp.
+
+
+\begin{DoxyCode}
+357 \{
+358     \textcolor{keywordtype}{int} ret = 0;
+359     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* value = afb\_req\_value(request, \hyperlink{homescreen_8cpp_a6a0e1db2562b442f8131ddf64b61d1ba}{\_application\_id});
+360     \textcolor{keywordflow}{if} (value) \{
+361         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"request params = %s."}, value);
+362         std::lock\_guard<std::mutex> lock(this->mtx);
+363         \textcolor{keyword}{auto} ip = client\_list.find(std::string(value));
+364         \textcolor{keywordflow}{if}(ip != client\_list.end()) \{
+365             ret = ip->second->hideWindow(request);
+366         \}
+367     \}
+368     \textcolor{keywordflow}{else} \{
+369         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"Please input application\_id"});
+370         ret = \hyperlink{hs-helper_8h_aa611e2ec24ef295bd87825889fe2ce5e}{AFB\_EVENT\_BAD\_REQUEST};
+371     \}
+372     \textcolor{keywordflow}{return} ret;
+373 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!init@{init}}
+\index{init@{init}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{init(void)}{init(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+Manager\+::init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_manager_ae0b9b18adeffca7822b060ad4ea8a7a1}{}\label{class_h_s___client_manager_ae0b9b18adeffca7822b060ad4ea8a7a1}
+\hyperlink{class_h_s___client_manager}{H\+S\+\_\+\+Client\+Manager} init function
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item Nothing
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+init result 
+
+Definition at line 71 of file hs-\/clientmanager.\+cpp.
+
+
+\begin{DoxyCode}
+72 \{
+73     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"called."});
+74 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!instance@{instance}}
+\index{instance@{instance}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{instance(void)}{instance(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\+S\+\_\+\+Client\+Manager} $\ast$ H\+S\+\_\+\+Client\+Manager\+::instance (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_h_s___client_manager_ad86c1fea7d107d52cbf0466fb7a2658b}{}\label{class_h_s___client_manager_ad86c1fea7d107d52cbf0466fb7a2658b}
+get instance
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item Nothing
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+\hyperlink{class_h_s___client_manager}{H\+S\+\_\+\+Client\+Manager} instance pointer 
+
+Definition at line 53 of file hs-\/clientmanager.\+cpp.
+
+
+\begin{DoxyCode}
+54 \{
+55     \textcolor{keywordflow}{if}(me == \textcolor{keyword}{nullptr})
+56         me = \textcolor{keyword}{new} \hyperlink{class_h_s___client_manager_adac35e476e559cc89bc39363525268bf}{HS\_ClientManager}();
+57 
+58     \textcolor{keywordflow}{return} me;
+59 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!on\+\_\+screen\+\_\+message@{on\+\_\+screen\+\_\+message}}
+\index{on\+\_\+screen\+\_\+message@{on\+\_\+screen\+\_\+message}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{on\+\_\+screen\+\_\+message(afb\+\_\+req\+\_\+t request)}{on_screen_message(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+Manager\+::on\+\_\+screen\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_manager_a58ce4a013d3694265dd69f481bf88510}{}\label{class_h_s___client_manager_a58ce4a013d3694265dd69f481bf88510}
+on\+\_\+screen\+\_\+message
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request\+: the request to bindings
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+result 
+
+Definition at line 195 of file hs-\/clientmanager.\+cpp.
+
+
+\begin{DoxyCode}
+196 \{
+197     \textcolor{keywordtype}{int} ret = 0;
+198     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* value = afb\_req\_value(request, \hyperlink{homescreen_8cpp_abfd6c1d6f316fa952b11553f8f275e92}{\_display\_message});
+199     \textcolor{keywordflow}{if} (value) \{
+200         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"request params = %s."}, value);
+201         std::lock\_guard<std::mutex> lock(this->mtx);
+202         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} m : client\_list) \{
+203             m.second->on\_screen\_message(request, value);
+204         \}
+205     \}
+206     \textcolor{keywordflow}{else} \{
+207         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"Please input display\_message"});
+208         ret = \hyperlink{hs-helper_8h_aa611e2ec24ef295bd87825889fe2ce5e}{AFB\_EVENT\_BAD\_REQUEST};
+209     \}
+210     \textcolor{keywordflow}{return} ret;
+211 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!on\+\_\+screen\+\_\+reply@{on\+\_\+screen\+\_\+reply}}
+\index{on\+\_\+screen\+\_\+reply@{on\+\_\+screen\+\_\+reply}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{on\+\_\+screen\+\_\+reply(afb\+\_\+req\+\_\+t request)}{on_screen_reply(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+Manager\+::on\+\_\+screen\+\_\+reply (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_manager_aa78f992287e3b8fe93422b331dc9edc5}{}\label{class_h_s___client_manager_aa78f992287e3b8fe93422b331dc9edc5}
+on\+\_\+screen\+\_\+reply
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request\+: the request to bindings
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+result 
+
+Definition at line 223 of file hs-\/clientmanager.\+cpp.
+
+
+\begin{DoxyCode}
+224 \{
+225     \textcolor{keywordtype}{int} ret = 0;
+226     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* value = afb\_req\_value(request, \hyperlink{homescreen_8cpp_a79b0f0b481161527ccb80e83da143219}{\_reply\_message});
+227     \textcolor{keywordflow}{if} (value) \{
+228       \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"request params = %s."}, value);
+229       std::lock\_guard<std::mutex> lock(this->mtx);
+230       \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} m : client\_list) \{
+231         m.second->on\_screen\_reply(request, value);
+232       \}
+233     \}
+234     \textcolor{keywordflow}{else} \{
+235         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"Please input reply\_message"});
+236         ret = \hyperlink{hs-helper_8h_aa611e2ec24ef295bd87825889fe2ce5e}{AFB\_EVENT\_BAD\_REQUEST};
+237     \}
+238     \textcolor{keywordflow}{return} ret;
+239 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!operator=@{operator=}}
+\index{operator=@{operator=}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{operator=(\+H\+S\+\_\+\+Client\+Manager const \&)=delete}{operator=(HS_ClientManager const &)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\+S\+\_\+\+Client\+Manager}\& H\+S\+\_\+\+Client\+Manager\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+S\+\_\+\+Client\+Manager} const \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{class_h_s___client_manager_ac8e02cffc79d4530b06e1143abb18891}{}\label{class_h_s___client_manager_ac8e02cffc79d4530b06e1143abb18891}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!operator=@{operator=}}
+\index{operator=@{operator=}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{operator=(\+H\+S\+\_\+\+Client\+Manager \&\&)=delete}{operator=(HS_ClientManager &&)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\+S\+\_\+\+Client\+Manager}\& H\+S\+\_\+\+Client\+Manager\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+S\+\_\+\+Client\+Manager} \&\&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{class_h_s___client_manager_a49e225bb8421c812ac016309d54a00fa}{}\label{class_h_s___client_manager_a49e225bb8421c812ac016309d54a00fa}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!remove\+Client\+Ctxt@{remove\+Client\+Ctxt}}
+\index{remove\+Client\+Ctxt@{remove\+Client\+Ctxt}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{remove\+Client\+Ctxt(void $\ast$data)}{removeClientCtxt(void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}void H\+S\+\_\+\+Client\+Manager\+::remove\+Client\+Ctxt (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_manager_adc23f8b3f5cc06eeab39fb24098af3e2}{}\label{class_h_s___client_manager_adc23f8b3f5cc06eeab39fb24098af3e2}
+remove Client from list
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item data\+: \hyperlink{struct_h_s___client_ctxt}{H\+S\+\_\+\+Client\+Ctxt} pointer
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 140 of file hs-\/clientmanager.\+cpp.
+
+
+\begin{DoxyCode}
+141 \{
+142     \hyperlink{struct_h_s___client_ctxt}{HS\_ClientCtxt} *ctxt = (\hyperlink{struct_h_s___client_ctxt}{HS\_ClientCtxt} *)data;
+143     \textcolor{keywordflow}{if}(ctxt == \textcolor{keyword}{nullptr})
+144     \{
+145         \hyperlink{include_2hmi-debug_8h_a65bb6c7cfe38f8a724beab5059d36fb2}{HMI\_ERROR}(\textcolor{stringliteral}{"homescreen-service"}, \textcolor{stringliteral}{"data is nullptr"});
+146         \textcolor{keywordflow}{return};
+147     \}
+148 
+149     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"}, \textcolor{stringliteral}{"remove app %s"}, ctxt->\hyperlink{struct_h_s___client_ctxt_a04929d7d5f583a821d3d594815f77d1c}{id}.c\_str());
+150     std::lock\_guard<std::mutex> lock(this->mtx);
+151     removeClient(ctxt->\hyperlink{struct_h_s___client_ctxt_a04929d7d5f583a821d3d594815f77d1c}{id});
+152     \textcolor{keyword}{delete} appid2ctxt[ctxt->\hyperlink{struct_h_s___client_ctxt_a04929d7d5f583a821d3d594815f77d1c}{id}];
+153     appid2ctxt.erase(ctxt->\hyperlink{struct_h_s___client_ctxt_a04929d7d5f583a821d3d594815f77d1c}{id});
+154 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!reply\+Show\+Window@{reply\+Show\+Window}}
+\index{reply\+Show\+Window@{reply\+Show\+Window}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{reply\+Show\+Window(afb\+\_\+req\+\_\+t request)}{replyShowWindow(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+Manager\+::reply\+Show\+Window (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_manager_a59b1c1e115b5a257a585c41f854f5fdd}{}\label{class_h_s___client_manager_a59b1c1e115b5a257a585c41f854f5fdd}
+reply\+Show\+Window event
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: the request
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+0 \+: success others \+: fail 
+
+Definition at line 386 of file hs-\/clientmanager.\+cpp.
+
+
+\begin{DoxyCode}
+387 \{
+388     \textcolor{keywordtype}{int} ret = 0;
+389     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* value = afb\_req\_value(request, \hyperlink{homescreen_8cpp_a6a0e1db2562b442f8131ddf64b61d1ba}{\_application\_id});
+390     \textcolor{keywordflow}{if} (value) \{
+391         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"request params = %s."}, value);
+392         std::lock\_guard<std::mutex> lock(this->mtx);
+393         \textcolor{keyword}{auto} ip = client\_list.find(std::string(value));
+394         \textcolor{keywordflow}{if}(ip != client\_list.end()) \{
+395             ret = ip->second->replyShowWindow(request, value);
+396         \}
+397     \}
+398     \textcolor{keywordflow}{else} \{
+399         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"Please input application\_id"});
+400         ret = \hyperlink{hs-helper_8h_aa611e2ec24ef295bd87825889fe2ce5e}{AFB\_EVENT\_BAD\_REQUEST};
+401     \}
+402     \textcolor{keywordflow}{return} ret;
+403 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!show\+Information@{show\+Information}}
+\index{show\+Information@{show\+Information}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{show\+Information(afb\+\_\+req\+\_\+t request)}{showInformation(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+Manager\+::show\+Information (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_manager_a0645294f89c67fd3c9b0cce62a900f69}{}\label{class_h_s___client_manager_a0645294f89c67fd3c9b0cce62a900f69}
+show\+Information event
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: the request
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+0 \+: success others \+: fail 
+
+Definition at line 443 of file hs-\/clientmanager.\+cpp.
+
+
+\begin{DoxyCode}
+444 \{
+445     \textcolor{keywordtype}{int} ret = 0;
+446     std::lock\_guard<std::mutex> lock(this->mtx);
+447     \textcolor{keyword}{auto} ip = client\_list.find(\hyperlink{hs-clientmanager_8cpp_a8bbab9002543614eacdc7a319d13a476}{\_homescreen});
+448     \textcolor{keywordflow}{if}(ip != client\_list.end()) \{
+449         ret = ip->second->showInformation(request);
+450     \}
+451     \textcolor{keywordflow}{else} \{
+452         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"not exist sessiion with homescreen"});
+453         ret = \hyperlink{hs-helper_8h_aefe0d7ff8202f954693c235c1fb8e310}{AFB\_REQ\_SHOWINFORMATION\_ERROR};
+454     \}
+455 
+456     \textcolor{keywordflow}{return} ret;
+457 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!show\+Notification@{show\+Notification}}
+\index{show\+Notification@{show\+Notification}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{show\+Notification(afb\+\_\+req\+\_\+t request)}{showNotification(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+Manager\+::show\+Notification (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_manager_a857934af280081ca6ac61d9f2cac37c5}{}\label{class_h_s___client_manager_a857934af280081ca6ac61d9f2cac37c5}
+show\+Notification event
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: the request
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+0 \+: success others \+: fail 
+
+Definition at line 416 of file hs-\/clientmanager.\+cpp.
+
+
+\begin{DoxyCode}
+417 \{
+418     \textcolor{keywordtype}{int} ret = 0;
+419     std::lock\_guard<std::mutex> lock(this->mtx);
+420     \textcolor{keyword}{auto} ip = client\_list.find(\hyperlink{hs-clientmanager_8cpp_a8bbab9002543614eacdc7a319d13a476}{\_homescreen});
+421     \textcolor{keywordflow}{if}(ip != client\_list.end()) \{
+422         ret = ip->second->showNotification(request);
+423     \}
+424     \textcolor{keywordflow}{else} \{
+425         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"not exist sessiion with homescreen"});
+426         ret = \hyperlink{hs-helper_8h_a057fc88b8445828c261305cf9107d99d}{AFB\_REQ\_SHOWNOTIFICATION\_ERROR};
+427     \}
+428 
+429     \textcolor{keywordflow}{return} ret;
+430 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!show\+Window@{show\+Window}}
+\index{show\+Window@{show\+Window}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{show\+Window(afb\+\_\+req\+\_\+t request)}{showWindow(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+Manager\+::show\+Window (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_manager_afed8158f276d1d22c32b0d89e970d442}{}\label{class_h_s___client_manager_afed8158f276d1d22c32b0d89e970d442}
+show\+Window event
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: the request
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+0 \+: success others \+: fail 
+
+Definition at line 326 of file hs-\/clientmanager.\+cpp.
+
+
+\begin{DoxyCode}
+327 \{
+328     \textcolor{keywordtype}{int} ret = 0;
+329     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* value = afb\_req\_value(request, \hyperlink{homescreen_8cpp_a6a0e1db2562b442f8131ddf64b61d1ba}{\_application\_id});
+330     \textcolor{keywordflow}{if} (value) \{
+331         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"request params = %s."}, value);
+332         std::lock\_guard<std::mutex> lock(this->mtx);
+333         \textcolor{keyword}{auto} ip = client\_list.find(std::string(value));
+334         \textcolor{keywordflow}{if}(ip != client\_list.end()) \{
+335             ret = ip->second->showWindow(request, value);
+336         \}
+337     \}
+338     \textcolor{keywordflow}{else} \{
+339         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"Please input application\_id"});
+340         ret = \hyperlink{hs-helper_8h_aa611e2ec24ef295bd87825889fe2ce5e}{AFB\_EVENT\_BAD\_REQUEST};
+341     \}
+342     \textcolor{keywordflow}{return} ret;
+343 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{subscribe(afb\+\_\+req\+\_\+t request)}{subscribe(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+Manager\+::subscribe (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_manager_a1b8a4e42342c4bcdc4e7dc4934e02469}{}\label{class_h_s___client_manager_a1b8a4e42342c4bcdc4e7dc4934e02469}
+subscribe
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request\+: the request to bindings
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+result 
+
+Definition at line 251 of file hs-\/clientmanager.\+cpp.
+
+
+\begin{DoxyCode}
+252 \{
+253     \textcolor{keywordtype}{int} ret = 0;
+254     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *value = afb\_req\_value(request, \textcolor{stringliteral}{"event"});
+255     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"value is %s"}, value);
+256     \textcolor{keywordflow}{if}(value) \{
+257         std::string appid(afb\_req\_get\_application\_id(request));
+258         std::lock\_guard<std::mutex> lock(this->mtx);
+259 
+260         \hyperlink{class_h_s___client}{HS\_Client}* client = \textcolor{keyword}{nullptr};
+261         \textcolor{keyword}{auto} ip = client\_list.find(appid);
+262         \textcolor{keywordflow}{if}(ip != client\_list.end()) \{
+263             client = client\_list[appid];
+264         \}
+265         \textcolor{keywordflow}{else} \{
+266             appid2ctxt[appid] = createClientCtxt(request, appid);
+267             client = addClient(request, appid);
+268         \}
+269 
+270         \textcolor{keywordflow}{if}(client->\hyperlink{class_h_s___client_a3d000ca70bd4a8af7c4895d95bc7d0d0}{subscribe}(request, value) != 0) \{
+271             \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"subscribe failed"});
+272             ret = \hyperlink{hs-helper_8h_a995612de89db4df1483c16e4b9b70571}{AFB\_REQ\_SUBSCRIBE\_ERROR};
+273         \}
+274     \}
+275     \textcolor{keywordflow}{else} \{
+276         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"Please input event name"});
+277         ret = \hyperlink{hs-helper_8h_aa611e2ec24ef295bd87825889fe2ce5e}{AFB\_EVENT\_BAD\_REQUEST};
+278     \}
+279     \textcolor{keywordflow}{return} ret;
+280 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!tap\+\_\+shortcut@{tap\+\_\+shortcut}}
+\index{tap\+\_\+shortcut@{tap\+\_\+shortcut}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{tap\+\_\+shortcut(afb\+\_\+req\+\_\+t request)}{tap_shortcut(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+Manager\+::tap\+\_\+shortcut (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_manager_a9910fc27c412530b5b9854b00bd16c07}{}\label{class_h_s___client_manager_a9910fc27c412530b5b9854b00bd16c07}
+tap\+\_\+shortcut
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request\+: the request to bindings
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+result 
+
+Definition at line 166 of file hs-\/clientmanager.\+cpp.
+
+
+\begin{DoxyCode}
+167 \{
+168     \textcolor{keywordtype}{int} ret = 0;
+169     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* value = afb\_req\_value(request, \hyperlink{homescreen_8cpp_a6a0e1db2562b442f8131ddf64b61d1ba}{\_application\_id});
+170     \textcolor{keywordflow}{if} (value) \{
+171         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"request params = %s."}, value);
+172         std::lock\_guard<std::mutex> lock(this->mtx);
+173         \textcolor{keyword}{auto} ip = client\_list.find(std::string(value));
+174         \textcolor{keywordflow}{if}(ip != client\_list.end()) \{
+175             ip->second->tap\_shortcut(value);
+176         \}
+177     \}
+178     \textcolor{keywordflow}{else} \{
+179         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"Please input application\_id"});
+180         ret = \hyperlink{hs-helper_8h_aa611e2ec24ef295bd87825889fe2ce5e}{AFB\_EVENT\_BAD\_REQUEST};
+181     \}
+182     \textcolor{keywordflow}{return} ret;
+183 \}
+\end{DoxyCode}
+\index{H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}!unsubscribe@{unsubscribe}}
+\index{unsubscribe@{unsubscribe}!H\+S\+\_\+\+Client\+Manager@{H\+S\+\_\+\+Client\+Manager}}
+\subsubsection[{\texorpdfstring{unsubscribe(afb\+\_\+req\+\_\+t request)}{unsubscribe(afb_req_t request)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+S\+\_\+\+Client\+Manager\+::unsubscribe (
+\begin{DoxyParamCaption}
+\item[{afb\+\_\+req\+\_\+t}]{request}
+\end{DoxyParamCaption}
+)}\hypertarget{class_h_s___client_manager_ac86314afbb90116e2f02ce071166226e}{}\label{class_h_s___client_manager_ac86314afbb90116e2f02ce071166226e}
+unsubscribe
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request\+: the request to bindings
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+result 
+
+Definition at line 292 of file hs-\/clientmanager.\+cpp.
+
+
+\begin{DoxyCode}
+293 \{
+294     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *value = afb\_req\_value(request, \textcolor{stringliteral}{"event"});
+295     \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"value is %s"}, value);
+296     \textcolor{keywordtype}{int} ret = 0;
+297     \textcolor{keywordflow}{if}(value) \{
+298         std::string appid(afb\_req\_get\_application\_id(request));
+299         std::lock\_guard<std::mutex> lock(this->mtx);
+300 
+301         \textcolor{keyword}{auto} ip = client\_list.find(appid);
+302         \textcolor{keywordflow}{if}(ip != client\_list.end()
+303         && ip->second->unsubscribe(request, value) != 0) \{
+304             \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"unsubscribe failed"});
+305             ret = \hyperlink{hs-helper_8h_a78e930a97920b821706a80ca8f430034}{AFB\_REQ\_UNSUBSCRIBE\_ERROR};
+306         \}
+307     \}
+308     \textcolor{keywordflow}{else} \{
+309         \hyperlink{include_2hmi-debug_8h_abc0d6e0760017d8ae48b836925b2ef15}{HMI\_NOTICE}(\textcolor{stringliteral}{"homescreen-service"},\textcolor{stringliteral}{"Please input event name"});
+310         ret = \hyperlink{hs-helper_8h_aa611e2ec24ef295bd87825889fe2ce5e}{AFB\_EVENT\_BAD\_REQUEST};
+311     \}
+312     \textcolor{keywordflow}{return} ret;
+313 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{hs-clientmanager_8h}{hs-\/clientmanager.\+h}\item 
+src/\hyperlink{hs-clientmanager_8cpp}{hs-\/clientmanager.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,374 @@
+\hypertarget{hs-helper_8cpp}{}\section{src/hs-\/helper.cpp File Reference}
+\label{hs-helper_8cpp}\index{src/hs-\/helper.\+cpp@{src/hs-\/helper.\+cpp}}
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$cstdarg$>$}\\*
+{\ttfamily \#include \char`\"{}hs-\/helper.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{hs-helper_8h_aa49f1dbbf26f01627a5737cf43aad899}{R\+E\+Q\+\_\+\+E\+R\+R\+OR} \hyperlink{hs-helper_8cpp_aba9ca63f68b1991f8650871f4eae8e0b}{get\+\_\+value\+\_\+uint16} (const afb\+\_\+req\+\_\+t request, const char $\ast$source, uint16\+\_\+t $\ast$out\+\_\+id)
+\item 
+\hyperlink{hs-helper_8h_aa49f1dbbf26f01627a5737cf43aad899}{R\+E\+Q\+\_\+\+E\+R\+R\+OR} \hyperlink{hs-helper_8cpp_af3043612cf74bb92cb073e10cacd594a}{get\+\_\+value\+\_\+int16} (const afb\+\_\+req\+\_\+t request, const char $\ast$source, int16\+\_\+t $\ast$out\+\_\+id)
+\item 
+\hyperlink{hs-helper_8h_aa49f1dbbf26f01627a5737cf43aad899}{R\+E\+Q\+\_\+\+E\+R\+R\+OR} \hyperlink{hs-helper_8cpp_a8121d965b6fd795c16b8576ab03dcaf1}{get\+\_\+value\+\_\+int32} (const afb\+\_\+req\+\_\+t request, const char $\ast$source, int32\+\_\+t $\ast$out\+\_\+id)
+\item 
+void \hyperlink{hs-helper_8cpp_a1ba31a6a94515ff1730ba0043a67d59e}{hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object} (struct json\+\_\+object $\ast$j\+\_\+obj, int count,...)
+\item 
+void \hyperlink{hs-helper_8cpp_a8777c53f1d4d5412f19b134ad85ffedf}{hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object\+\_\+str} (struct json\+\_\+object $\ast$j\+\_\+obj, int count,...)
+\item 
+void \hyperlink{hs-helper_8cpp_ae83604a37134e7bdee3ce4f10bb0b47a}{hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object\+\_\+func} (struct json\+\_\+object $\ast$j\+\_\+obj, const char $\ast$verb\+\_\+name, int count,...)
+\item 
+int \hyperlink{hs-helper_8cpp_a2ff1b894941c3b461ca8119079c4146a}{hs\+\_\+search\+\_\+event\+\_\+name\+\_\+index} (const char $\ast$value)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{hs-helper_8cpp_a0cd84b1a2184c9b84d1b7bf24582f28e}{evlist} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{hs-\/helper.\+cpp@{hs-\/helper.\+cpp}!get\+\_\+value\+\_\+int16@{get\+\_\+value\+\_\+int16}}
+\index{get\+\_\+value\+\_\+int16@{get\+\_\+value\+\_\+int16}!hs-\/helper.\+cpp@{hs-\/helper.\+cpp}}
+\subsubsection[{\texorpdfstring{get\+\_\+value\+\_\+int16(const afb\+\_\+req\+\_\+t request, const char $\ast$source, int16\+\_\+t $\ast$out\+\_\+id)}{get_value_int16(const afb_req_t request, const char *source, int16_t *out_id)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+E\+Q\+\_\+\+E\+R\+R\+OR} get\+\_\+value\+\_\+int16 (
+\begin{DoxyParamCaption}
+\item[{const afb\+\_\+req\+\_\+t}]{request, }
+\item[{const char $\ast$}]{source, }
+\item[{int16\+\_\+t $\ast$}]{out\+\_\+id}
+\end{DoxyParamCaption}
+)}\hypertarget{hs-helper_8cpp_af3043612cf74bb92cb073e10cacd594a}{}\label{hs-helper_8cpp_af3043612cf74bb92cb073e10cacd594a}
+get int16 value from source
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: Describes the request by bindings from afb-\/daemon
+\item source \+: input source
+\item out\+\_\+id \+: output int16 value
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+error code 
+
+Definition at line 82 of file hs-\/helper.\+cpp.
+
+
+\begin{DoxyCode}
+83 \{
+84     \textcolor{keywordtype}{char}* endptr;
+85     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* tmp = afb\_req\_value (request, source);
+86     \textcolor{keywordflow}{if}(!tmp)
+87     \{
+88         \textcolor{keywordflow}{return} \hyperlink{hs-helper_8h_aa49f1dbbf26f01627a5737cf43aad899a96a855966bc63045222b3dcac524cee1}{REQ\_FAIL};
+89     \}
+90     \textcolor{keywordtype}{long} tmp\_id = strtol(tmp,&endptr,10);
+91 
+92     \textcolor{comment}{/* error check of range */}
+93     \textcolor{keywordflow}{if}( (tmp\_id > INT16\_MAX) || (tmp\_id < INT16\_MIN) )
+94     \{
+95         \textcolor{keywordflow}{return} \hyperlink{hs-helper_8h_aa49f1dbbf26f01627a5737cf43aad899add1c84bf80c5f80741ee8f37fef1e12b}{OUT\_RANGE};
+96     \}
+97     \textcolor{keywordflow}{if}(*endptr != \textcolor{charliteral}{'\(\backslash\)0'})
+98     \{
+99         \textcolor{keywordflow}{return} \hyperlink{hs-helper_8h_aa49f1dbbf26f01627a5737cf43aad899aa223eed65c9bee2bf1f4cdecaf90d66a}{NOT\_NUMBER};
+100     \}
+101 
+102     *out\_id = (int16\_t)tmp\_id;
+103     \textcolor{keywordflow}{return} \hyperlink{hs-helper_8h_aa49f1dbbf26f01627a5737cf43aad899ab093abb14c097b3b7719debb04d5e8ee}{REQ\_OK};
+104 \}
+\end{DoxyCode}
+\index{hs-\/helper.\+cpp@{hs-\/helper.\+cpp}!get\+\_\+value\+\_\+int32@{get\+\_\+value\+\_\+int32}}
+\index{get\+\_\+value\+\_\+int32@{get\+\_\+value\+\_\+int32}!hs-\/helper.\+cpp@{hs-\/helper.\+cpp}}
+\subsubsection[{\texorpdfstring{get\+\_\+value\+\_\+int32(const afb\+\_\+req\+\_\+t request, const char $\ast$source, int32\+\_\+t $\ast$out\+\_\+id)}{get_value_int32(const afb_req_t request, const char *source, int32_t *out_id)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+E\+Q\+\_\+\+E\+R\+R\+OR} get\+\_\+value\+\_\+int32 (
+\begin{DoxyParamCaption}
+\item[{const afb\+\_\+req\+\_\+t}]{request, }
+\item[{const char $\ast$}]{source, }
+\item[{int32\+\_\+t $\ast$}]{out\+\_\+id}
+\end{DoxyParamCaption}
+)}\hypertarget{hs-helper_8cpp_a8121d965b6fd795c16b8576ab03dcaf1}{}\label{hs-helper_8cpp_a8121d965b6fd795c16b8576ab03dcaf1}
+get int32 value from source
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: Describes the request by bindings from afb-\/daemon
+\item source \+: input source
+\item out\+\_\+id \+: output int32 value
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+error code 
+
+Definition at line 118 of file hs-\/helper.\+cpp.
+
+
+\begin{DoxyCode}
+119 \{
+120     \textcolor{keywordtype}{char}* endptr;
+121     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* tmp = afb\_req\_value (request, source);
+122     \textcolor{keywordflow}{if}(!tmp)
+123     \{
+124         \textcolor{keywordflow}{return} \hyperlink{hs-helper_8h_aa49f1dbbf26f01627a5737cf43aad899a96a855966bc63045222b3dcac524cee1}{REQ\_FAIL};
+125     \}
+126     \textcolor{keywordtype}{long} tmp\_id = strtol(tmp,&endptr,10);
+127 
+128     \textcolor{comment}{/* error check of range */}
+129     \textcolor{keywordflow}{if}( (tmp\_id > INT32\_MAX) || (tmp\_id < INT32\_MIN) )
+130     \{
+131         \textcolor{keywordflow}{return} \hyperlink{hs-helper_8h_aa49f1dbbf26f01627a5737cf43aad899add1c84bf80c5f80741ee8f37fef1e12b}{OUT\_RANGE};
+132     \}
+133     \textcolor{keywordflow}{if}(*endptr != \textcolor{charliteral}{'\(\backslash\)0'})
+134     \{
+135         \textcolor{keywordflow}{return} \hyperlink{hs-helper_8h_aa49f1dbbf26f01627a5737cf43aad899aa223eed65c9bee2bf1f4cdecaf90d66a}{NOT\_NUMBER};
+136     \}
+137 
+138     *out\_id = (int32\_t)tmp\_id;
+139     \textcolor{keywordflow}{return} \hyperlink{hs-helper_8h_aa49f1dbbf26f01627a5737cf43aad899ab093abb14c097b3b7719debb04d5e8ee}{REQ\_OK};
+140 \}
+\end{DoxyCode}
+\index{hs-\/helper.\+cpp@{hs-\/helper.\+cpp}!get\+\_\+value\+\_\+uint16@{get\+\_\+value\+\_\+uint16}}
+\index{get\+\_\+value\+\_\+uint16@{get\+\_\+value\+\_\+uint16}!hs-\/helper.\+cpp@{hs-\/helper.\+cpp}}
+\subsubsection[{\texorpdfstring{get\+\_\+value\+\_\+uint16(const afb\+\_\+req\+\_\+t request, const char $\ast$source, uint16\+\_\+t $\ast$out\+\_\+id)}{get_value_uint16(const afb_req_t request, const char *source, uint16_t *out_id)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+E\+Q\+\_\+\+E\+R\+R\+OR} get\+\_\+value\+\_\+uint16 (
+\begin{DoxyParamCaption}
+\item[{const afb\+\_\+req\+\_\+t}]{request, }
+\item[{const char $\ast$}]{source, }
+\item[{uint16\+\_\+t $\ast$}]{out\+\_\+id}
+\end{DoxyParamCaption}
+)}\hypertarget{hs-helper_8cpp_aba9ca63f68b1991f8650871f4eae8e0b}{}\label{hs-helper_8cpp_aba9ca63f68b1991f8650871f4eae8e0b}
+get uint16 value from source
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item request \+: Describes the request by bindings from afb-\/daemon
+\item source \+: input source
+\item out\+\_\+id \+: output uint16 value
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+error code 
+
+Definition at line 46 of file hs-\/helper.\+cpp.
+
+
+\begin{DoxyCode}
+47 \{
+48     \textcolor{keywordtype}{char}* endptr;
+49     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* tmp = afb\_req\_value (request, source);
+50     \textcolor{keywordflow}{if}(!tmp)
+51     \{
+52         \textcolor{keywordflow}{return} \hyperlink{hs-helper_8h_aa49f1dbbf26f01627a5737cf43aad899a96a855966bc63045222b3dcac524cee1}{REQ\_FAIL};
+53     \}
+54     \textcolor{keywordtype}{long} tmp\_id = strtol(tmp,&endptr,10);
+55 
+56     \textcolor{comment}{/* error check of range */}
+57     \textcolor{keywordflow}{if}( (tmp\_id > UINT16\_MAX) || (tmp\_id < 0) )
+58     \{
+59         \textcolor{keywordflow}{return} \hyperlink{hs-helper_8h_aa49f1dbbf26f01627a5737cf43aad899add1c84bf80c5f80741ee8f37fef1e12b}{OUT\_RANGE};
+60     \}
+61     \textcolor{keywordflow}{if}(*endptr != \textcolor{charliteral}{'\(\backslash\)0'})
+62     \{
+63         \textcolor{keywordflow}{return} \hyperlink{hs-helper_8h_aa49f1dbbf26f01627a5737cf43aad899aa223eed65c9bee2bf1f4cdecaf90d66a}{NOT\_NUMBER};
+64     \}
+65 
+66     *out\_id = (uint16\_t)tmp\_id;
+67     \textcolor{keywordflow}{return} \hyperlink{hs-helper_8h_aa49f1dbbf26f01627a5737cf43aad899ab093abb14c097b3b7719debb04d5e8ee}{REQ\_OK};
+68 \}
+\end{DoxyCode}
+\index{hs-\/helper.\+cpp@{hs-\/helper.\+cpp}!hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object@{hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object}}
+\index{hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object@{hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object}!hs-\/helper.\+cpp@{hs-\/helper.\+cpp}}
+\subsubsection[{\texorpdfstring{hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object(struct json\+\_\+object $\ast$j\+\_\+obj, int count,...)}{hs_add_object_to_json_object(struct json_object *j_obj, int count,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object (
+\begin{DoxyParamCaption}
+\item[{struct json\+\_\+object $\ast$}]{j\+\_\+obj, }
+\item[{int}]{count, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{hs-helper_8cpp_a1ba31a6a94515ff1730ba0043a67d59e}{}\label{hs-helper_8cpp_a1ba31a6a94515ff1730ba0043a67d59e}
+add int object to json object
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item j\+\_\+obj \+: the json object will join in int json object
+\item count \+: input parameter number
+\item ... \+: parameter list
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 154 of file hs-\/helper.\+cpp.
+
+
+\begin{DoxyCode}
+155 \{
+156     va\_list args;
+157     va\_start(args, count);
+158     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < count; ++i )
+159     \{
+160         \textcolor{keywordtype}{char} *key = va\_arg(args, \textcolor{keywordtype}{char}*);
+161         \textcolor{keywordtype}{int} value = va\_arg(args, \textcolor{keywordtype}{int});
+162         json\_object\_object\_add(j\_obj, key, json\_object\_new\_int((int32\_t)value));
+163         ++i;
+164     \}
+165     va\_end(args);
+166 \}
+\end{DoxyCode}
+\index{hs-\/helper.\+cpp@{hs-\/helper.\+cpp}!hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object\+\_\+func@{hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object\+\_\+func}}
+\index{hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object\+\_\+func@{hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object\+\_\+func}!hs-\/helper.\+cpp@{hs-\/helper.\+cpp}}
+\subsubsection[{\texorpdfstring{hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object\+\_\+func(struct json\+\_\+object $\ast$j\+\_\+obj, const char $\ast$verb\+\_\+name, int count,...)}{hs_add_object_to_json_object_func(struct json_object *j_obj, const char *verb_name, int count,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object\+\_\+func (
+\begin{DoxyParamCaption}
+\item[{struct json\+\_\+object $\ast$}]{j\+\_\+obj, }
+\item[{const char $\ast$}]{verb\+\_\+name, }
+\item[{int}]{count, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{hs-helper_8cpp_ae83604a37134e7bdee3ce4f10bb0b47a}{}\label{hs-helper_8cpp_ae83604a37134e7bdee3ce4f10bb0b47a}
+add new json object to json object
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item j\+\_\+obj \+: the json object will join in new json object
+\item verb\+\_\+name \+: new json object\textquotesingle{}s verb value
+\item count \+: input parameter number
+\item ... \+: parameter list
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 207 of file hs-\/helper.\+cpp.
+
+
+\begin{DoxyCode}
+208 \{
+209     va\_list args;
+210     va\_start(args, count);
+211 
+212     json\_object\_object\_add(j\_obj,\textcolor{stringliteral}{"verb"}, json\_object\_new\_string(verb\_name));
+213 
+214     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < count; ++i )
+215     \{
+216         \textcolor{keywordtype}{char} *key = va\_arg(args, \textcolor{keywordtype}{char}*);
+217         \textcolor{keywordtype}{int} value = va\_arg(args, \textcolor{keywordtype}{int});
+218         json\_object\_object\_add(j\_obj, key, json\_object\_new\_int((int32\_t)value));
+219         ++i;
+220     \}
+221     va\_end(args);
+222 \}
+\end{DoxyCode}
+\index{hs-\/helper.\+cpp@{hs-\/helper.\+cpp}!hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object\+\_\+str@{hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object\+\_\+str}}
+\index{hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object\+\_\+str@{hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object\+\_\+str}!hs-\/helper.\+cpp@{hs-\/helper.\+cpp}}
+\subsubsection[{\texorpdfstring{hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object\+\_\+str(struct json\+\_\+object $\ast$j\+\_\+obj, int count,...)}{hs_add_object_to_json_object_str(struct json_object *j_obj, int count,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void hs\+\_\+add\+\_\+object\+\_\+to\+\_\+json\+\_\+object\+\_\+str (
+\begin{DoxyParamCaption}
+\item[{struct json\+\_\+object $\ast$}]{j\+\_\+obj, }
+\item[{int}]{count, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{hs-helper_8cpp_a8777c53f1d4d5412f19b134ad85ffedf}{}\label{hs-helper_8cpp_a8777c53f1d4d5412f19b134ad85ffedf}
+add string object to json object
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item j\+\_\+obj \+: the json object will join in string json object
+\item count \+: input parameter number
+\item ... \+: parameter list
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+None 
+
+Definition at line 180 of file hs-\/helper.\+cpp.
+
+
+\begin{DoxyCode}
+181 \{
+182     va\_list args;
+183     va\_start(args, count);
+184     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < count; ++i )
+185     \{
+186         \textcolor{keywordtype}{char} *key = va\_arg(args, \textcolor{keywordtype}{char}*);
+187         \textcolor{keywordtype}{char} *value = va\_arg(args, \textcolor{keywordtype}{char}*);
+188         json\_object\_object\_add(j\_obj, key, json\_object\_new\_string(value));
+189         ++i;
+190     \}
+191     va\_end(args);
+192 \}
+\end{DoxyCode}
+\index{hs-\/helper.\+cpp@{hs-\/helper.\+cpp}!hs\+\_\+search\+\_\+event\+\_\+name\+\_\+index@{hs\+\_\+search\+\_\+event\+\_\+name\+\_\+index}}
+\index{hs\+\_\+search\+\_\+event\+\_\+name\+\_\+index@{hs\+\_\+search\+\_\+event\+\_\+name\+\_\+index}!hs-\/helper.\+cpp@{hs-\/helper.\+cpp}}
+\subsubsection[{\texorpdfstring{hs\+\_\+search\+\_\+event\+\_\+name\+\_\+index(const char $\ast$value)}{hs_search_event_name_index(const char *value)}}]{\setlength{\rightskip}{0pt plus 5cm}int hs\+\_\+search\+\_\+event\+\_\+name\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{hs-helper_8cpp_a2ff1b894941c3b461ca8119079c4146a}{}\label{hs-helper_8cpp_a2ff1b894941c3b461ca8119079c4146a}
+search event position in event list
+
+\subparagraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item value \+: searched event name
+\end{DoxyItemize}
+
+\subparagraph*{Return}
+
+event\textquotesingle{}s index in event list 
+
+Definition at line 234 of file hs-\/helper.\+cpp.
+
+
+\begin{DoxyCode}
+235 \{
+236     \textcolor{keywordtype}{size\_t} buf\_size = 50;
+237     \textcolor{keywordtype}{size\_t} size = \textcolor{keyword}{sizeof} \hyperlink{hs-helper_8cpp_a0cd84b1a2184c9b84d1b7bf24582f28e}{evlist} / \textcolor{keyword}{sizeof} *\hyperlink{hs-helper_8cpp_a0cd84b1a2184c9b84d1b7bf24582f28e}{evlist};
+238     \textcolor{keywordtype}{int} ret = -1;
+239     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} i = 0 ; i < size ; ++i)
+240     \{
+241         \textcolor{keywordflow}{if}(!strncmp(value, \hyperlink{hs-helper_8cpp_a0cd84b1a2184c9b84d1b7bf24582f28e}{evlist}[i], buf\_size))
+242         \{
+243             ret = i;
+244             \textcolor{keywordflow}{break};
+245         \}
+246     \}
+247     \textcolor{keywordflow}{return} ret;
+248 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\index{hs-\/helper.\+cpp@{hs-\/helper.\+cpp}!evlist@{evlist}}
+\index{evlist@{evlist}!hs-\/helper.\+cpp@{hs-\/helper.\+cpp}}
+\subsubsection[{\texorpdfstring{evlist}{evlist}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ evlist\mbox{[}$\,$\mbox{]}}\hypertarget{hs-helper_8cpp_a0cd84b1a2184c9b84d1b7bf24582f28e}{}\label{hs-helper_8cpp_a0cd84b1a2184c9b84d1b7bf24582f28e}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \textcolor{stringliteral}{"tap\_shortcut"},
+    \textcolor{stringliteral}{"on\_screen\_message"},
+    \textcolor{stringliteral}{"on\_screen\_reply"},
+    \textcolor{stringliteral}{"showWindow"},
+    \textcolor{stringliteral}{"hideWindow"},
+    \textcolor{stringliteral}{"replyShowWindow"},
+    \textcolor{stringliteral}{"showNotification"},
+    \textcolor{stringliteral}{"showInformation"},
+    \textcolor{stringliteral}{"reserved"}
+  \}
+\end{DoxyCode}
+
+
+Definition at line 22 of file hs-\/helper.\+cpp.
+

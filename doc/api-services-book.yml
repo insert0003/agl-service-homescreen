@@ -1,0 +1,13 @@
+type: books
+books:
+-
+    id: agl-service-homescreen
+    title: AGL Service Homescreen
+    description: AGL Service Homescreen documentation
+    keywords:
+    author: "TOYOTA MOTOR CORPORATION"
+    version: master
+    chapters:
+    - url: ApplicationGuide.md
+      destination: 3_1-HomeScreen-Guide.md
+      name: Home Screen Developper Guide

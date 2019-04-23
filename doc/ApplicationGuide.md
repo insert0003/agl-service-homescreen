@@ -205,8 +205,6 @@ The communication protocols between libhomescreen and upper binder, upper binder
 
 ![softwarestack.png](parts/software-stack.png)
 
-![softwarestack.png](parts/softwarestack.png)
-
 * * *
 
 <div id="API%20reference"></div>

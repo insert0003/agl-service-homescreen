@@ -216,7 +216,7 @@ The communication protocols between libhomescreen and upper binder, upper binder
 
 ### HomeScreen Specific API
 
-- [LibHomeScreen ()](https://git.automotivelinux.org/apps/agl-service-homescreen/plain/doc/api-ref/html/de/dd0/class_lib_home_screen.html#a724bd949c4154fad041f96a15ef0f5dc)
+- [LibHomeScreen ()](api-ref/html/de/dd0/class_lib_home_screen.html#a724bd949c4154fad041f96a15ef0f5dc)
 - [init (const int port, const std::string &token)](api-ref/html/de/dd0/class_lib_home_screen.html#a6a57b573cc767725762ba9beab032220)
 - [tapShortcut(const char *application_id)](api-ref/html/de/dd0/class_lib_home_screen.html#a6ca8ff4a2aa019a735afaff713e0ef44)
 - [onScreenMessage(const char *display_message)](api-ref/html/de/dd0/class_lib_home_screen.html#ac336482036a72b51a822725f1929523c)

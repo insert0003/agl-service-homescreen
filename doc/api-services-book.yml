@@ -10,3 +10,7 @@ books:
     chapters:
     - url: ApplicationGuide.md
       name: Home Screen Developper Guide
+    - name: HomeScreenHTML
+      children:
+        - url: api-ref/html/de/dd0/class_lib_home_screen.html
+          name: lib_home_screen

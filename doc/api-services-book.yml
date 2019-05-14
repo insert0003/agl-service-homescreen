@@ -10,3 +10,5 @@ books:
     chapters:
     - url: ApplicationGuide.md
       name: Home Screen Developper Guide
+    - url: api-ref/html/de/dd0/class_lib_home_screen.html
+      name: class_lib_home_screen

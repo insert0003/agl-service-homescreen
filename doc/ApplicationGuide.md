@@ -203,7 +203,7 @@ On the other hand, regarding lower binder there is only one module in the system
 
 The communication protocols between libhomescreen and upper binder, upper binder and lower binder, lower binder (homescreen-binding) are WebSocket.
 
-![softwarestack.png](parts/softwarestack.png)
+![softwarestack][softwarestack]
 
 * * *
 
@@ -460,7 +460,7 @@ note over App,hss
 end note
 hss-> homescreen: push showNotification event
 note over hss,homescreen
-{"application_id":"request application id", 
+{"application_id":"request application id",
 "parameter":{"icon":"display icon", "text":"display text"}}
 end note
 
@@ -488,3 +488,5 @@ homescreen->homescreen: display information message 3s
 
 @enduml
 ```
+
+[softwarestack]: parts/softwarestack.png

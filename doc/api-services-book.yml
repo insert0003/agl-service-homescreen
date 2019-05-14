@@ -8,5 +8,5 @@ books:
     author: "TOYOTA MOTOR CORPORATION"
     version: master
     chapters:
-        - url: ApplicationGuide.md
-          name: DevelopperGuide
+    - url: ApplicationGuide.md
+      name: Home Screen Developper Guide
